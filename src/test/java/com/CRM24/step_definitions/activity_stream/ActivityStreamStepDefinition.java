@@ -1,7 +1,6 @@
 package com.CRM24.step_definitions.activity_stream;
 
 import com.CRM24.pages.activity_stream.ActivityStreamPage;
-import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import io.cucumber.java.en.And;
@@ -130,5 +129,16 @@ public class ActivityStreamStepDefinition {
     @Then("user verify attached tag {string} on new feed")
     public void userVerifyAttachedTagOnNewFeed(String tag) {
         Assert.assertEquals(UiUtil.getTextFromElement(XpathUtil.NEW_FEED_ATTACHED_TAG,tag),tag);
+    }
+
+    @And("user allows permission")
+    public void userAllowsPermission() {
+        activityStream.clickVideoMsgAllowBtn();
+    }
+
+    @Then("user verify error message")
+    public void userVerifyErrorMessage() {
+        Assert.assertTrue(activityStream.popUpErrorMsgDisplayed());
+        activityStream.clickVideoMsgCloseBtn();
     }
 }

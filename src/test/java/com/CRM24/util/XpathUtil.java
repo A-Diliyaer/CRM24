@@ -44,4 +44,8 @@ public class XpathUtil {
     public static final String MSG_TAB_TAG_INPUT_BOX = "//div[@id='bx-post-tag-popup']//input";
     public static final String MSG_TAB_TAG_ADD_BTN = "//div[@id='bx-post-tag-popup']//span";
     public static final String NEW_FEED_ATTACHED_TAG = "//div[@class='feed-item-wrap'][1]//a[@bx-tag-value='%s']";
+    public static final String GEN_MSG_TAB_VIDEOMSG_POPUP_BTN = "//div[@id='bx-popup-videomessage-popup']//span[.='%s']";
+    public static final String MSG_TAB_VIDEO_ERROR_MSG = "//div[@id='bx-popup-videomessage-popup']//div[.='Cannot access your camera and microphone.']";
+
+
 }

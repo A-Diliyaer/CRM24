@@ -76,3 +76,11 @@ Feature: MessageTab
     And  user clicks send button
     Then user verify attached tag "tag" on new feed
 
+  @recordVideo
+  Scenario: verify record video access is denied
+    When user clicks on post button Record Video
+    And  user allows permission
+    Then user verify error message
+
+
+

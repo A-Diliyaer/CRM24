@@ -121,5 +121,15 @@ public class ActivityStreamPage extends AbstractPageBase {
         UiUtil.clickElement(XpathUtil.MSG_TAB_TAG_ADD_BTN);
     }
 
+    public void clickVideoMsgAllowBtn(){
+        UiUtil.clickElement(XpathUtil.GEN_MSG_TAB_VIDEOMSG_POPUP_BTN,"Allow");
+    }
 
+    public void clickVideoMsgCloseBtn(){
+        UiUtil.clickElement(XpathUtil.GEN_MSG_TAB_VIDEOMSG_POPUP_BTN,"Close");
+    }
+
+    public boolean popUpErrorMsgDisplayed(){
+        return UiUtil.elementDisplayed(XpathUtil.MSG_TAB_VIDEO_ERROR_MSG);
+    }
 }
