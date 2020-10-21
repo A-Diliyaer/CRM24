@@ -63,7 +63,6 @@ public class ActivityStreamStepDefinition {
 
     @And("employee {string} should appear in the destination box")
     public void employeeShouldAppearInTheDestinationBox(String employee) {
-        BrowserUtils.wait(1);
         Assert.assertTrue(activityStream.selectedEmployeelisted(employee));
     }
 
