@@ -1,6 +1,7 @@
 package com.CRM24.step_definitions.activity_stream;
 
 import com.CRM24.pages.activity_stream.ActivityStreamPage;
+import com.CRM24.util.GlobalDataUtil;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import io.cucumber.java.en.And;
@@ -11,6 +12,7 @@ import org.junit.Assert;
 public class ActivityStreamStepDefinition {
 
     ActivityStreamPage activityStream = new ActivityStreamPage();
+    GlobalDataUtil activeTab  = new GlobalDataUtil();
 
     @And("user clicks {string} tab under Activity Stream")
     public void userClicksTabUnderActivityStream(String tab) {
@@ -150,5 +152,16 @@ public class ActivityStreamStepDefinition {
     @Then("user verify text format")
     public void userVerifyTextFormat() {
 
+    }
+
+    @And("user writes {string} in title block")
+    public void userWritesInTitleBlock(String title) {
+        activeTab.setMsgTitle(title);
+        activityStream.writeTitle(title);
+    }
+
+    @Then("user verify new feed message title")
+    public void userVerifyNewFeedMessageTitle() {
+        Assert.assertEquals(activityStream.getNewFeedMsgTitle(),activeTab.getMsgTitle());
     }
 }

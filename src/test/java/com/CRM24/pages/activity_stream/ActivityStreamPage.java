@@ -1,8 +1,10 @@
 package com.CRM24.pages.activity_stream;
 
 import com.CRM24.pages.base_navigation_page.AbstractPageBase;
+import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Arrays;
 
@@ -140,7 +142,11 @@ public class ActivityStreamPage extends AbstractPageBase {
                 XpathUtil.GEN_MSG_TAB_EDITOR_TOOLS_FORMAT,each));
     }
 
-    public void gettextFormat(){
+    public void writeTitle(String title){
+        UiUtil.sendTextToElement(XpathUtil.MSG_TAB_CONTENT_TITLE,title);
+    }
 
+    public String getNewFeedMsgTitle(){
+        return UiUtil.getTextFromElement(UiUtil.getStaleElement(XpathUtil.NEW_FEED_MSG_TITLE));
     }
 }

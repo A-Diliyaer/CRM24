@@ -15,7 +15,7 @@ public class UiUtil {
     static String parentWindow;
     static WebDriver driver = Driver.getDriver();
     static Actions action = new Actions(Driver.getDriver());
-    static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),20);
+    static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
 
 
     public static String get_xpath(String format, String value){
@@ -85,6 +85,10 @@ public class UiUtil {
         return wait.until(ExpectedConditions.visibilityOf(get_webElement(xpath))).getText().trim();
     }
 
+    public static String getTextFromElement(WebElement element){
+        return element.getText();
+    }
+
     public static String getTextFromElement(String format, String value){
         return wait.until(ExpectedConditions.visibilityOf(get_webElement(format,value))).getText().trim();
     }
@@ -142,10 +146,9 @@ public class UiUtil {
         return A+B;
     }
 
-    public static String createXpath(String xpath,String format){
-        for (String each: format.split(", ")){
-            xpath+=each;
-        }
-        return xpath;
+    public static WebElement getStaleElement(String xpath){
+        wait.until(ExpectedConditions.stalenessOf(get_webElement(xpath)));
+        return get_webElement(xpath);
     }
+
 }

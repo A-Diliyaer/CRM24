@@ -2,13 +2,13 @@ package com.CRM24.util;
 
 public class GlobalDataUtil {
 
-    private String activeMenu;
+    private String msgTitle;
 
-    public String getActiveMenu() {
-        return activeMenu;
+    public String getMsgTitle() {
+        return msgTitle;
     }
 
-    public void setActiveMenu(String activeMenu) {
-        this.activeMenu = activeMenu;
+    public void setMsgTitle(String msgTitle) {
+        this.msgTitle = msgTitle;
     }
 }

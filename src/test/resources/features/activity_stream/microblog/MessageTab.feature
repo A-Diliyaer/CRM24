@@ -85,9 +85,18 @@ Feature: MessageTab
   @visualEditor
   Scenario: write a message with format: Bold, Italic, Strikethrough, Underline
     When user clicks on post button Visual editor
-    And  user selects text format Bold, Italic, underline, Strikethrough
+    And  user selects text format Bold, Italic, Underline, Strikethrough
     And  user writes "dilyar" in content box
-    Then user verify text format
+
+  @addTitle
+  Scenario: write a message with a title
+    When user clicks on post button Topic
+    And  user writes "title2" in title block
+    And  user writes "content2" in content box
+    And  user clicks send button
+    Then user verify new feed message title
+
+
 
 
 

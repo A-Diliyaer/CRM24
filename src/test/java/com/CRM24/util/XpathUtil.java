@@ -48,5 +48,10 @@ public class XpathUtil {
     public static final String MSG_TAB_VIDEO_ERROR_MSG = "//div[@id='bx-popup-videomessage-popup']//div[.='Cannot access your camera and microphone.']";
     public static final String MSG_TAB_VISUAL_EDITOR = "//span[@class='bxhtmled-top-bar-wrap']";
     public static final String GEN_MSG_TAB_EDITOR_TOOLS_FORMAT = "//span[@class='bxhtmled-top-bar-wrap']/span[@title='%s']";
+    public static final String MSG_TAB_CONTENT_TITLE = "//input[@id='POST_TITLE']";
+    public static final String NEW_FEED_MSG_TITLE = "//div[@class='feed-item-wrap'][1]//a[@class='feed-post-title']";
+
+
+
 
 }
