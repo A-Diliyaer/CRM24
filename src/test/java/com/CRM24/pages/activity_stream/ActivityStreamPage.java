@@ -4,6 +4,8 @@ import com.CRM24.pages.base_navigation_page.AbstractPageBase;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 
+import java.util.Arrays;
+
 public class ActivityStreamPage extends AbstractPageBase {
 
     public void clickTab(String tab) {
@@ -131,5 +133,14 @@ public class ActivityStreamPage extends AbstractPageBase {
 
     public boolean popUpErrorMsgDisplayed(){
         return UiUtil.elementDisplayed(XpathUtil.MSG_TAB_VIDEO_ERROR_MSG);
+    }
+
+    public void selectTextFormat(String format){
+        Arrays.stream(format.split(",")).map(String::trim).forEach(each->UiUtil.clickElement(
+                XpathUtil.GEN_MSG_TAB_EDITOR_TOOLS_FORMAT,each));
+    }
+
+    public void gettextFormat(){
+
     }
 }

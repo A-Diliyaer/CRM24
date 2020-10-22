@@ -82,5 +82,13 @@ Feature: MessageTab
     And  user allows permission
     Then user verify error message
 
+  @visualEditor
+  Scenario: write a message with format: Bold, Italic, Strikethrough, Underline
+    When user clicks on post button Visual editor
+    And  user selects text format Bold, Italic, underline, Strikethrough
+    And  user writes "dilyar" in content box
+    Then user verify text format
+
+
 
 

@@ -141,4 +141,14 @@ public class ActivityStreamStepDefinition {
         Assert.assertTrue(activityStream.popUpErrorMsgDisplayed());
         activityStream.clickVideoMsgCloseBtn();
     }
+
+    @And("^user selects text format (.*)$")
+    public void userSelectsTextFormat(String format) {
+        activityStream.selectTextFormat(format);
+    }
+
+    @Then("user verify text format")
+    public void userVerifyTextFormat() {
+
+    }
 }

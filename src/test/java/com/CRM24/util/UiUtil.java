@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Arrays;
 import java.util.Set;
 
 public class UiUtil {
@@ -139,5 +140,12 @@ public class UiUtil {
 
     public static String add(String A, String B){
         return A+B;
+    }
+
+    public static String createXpath(String xpath,String format){
+        for (String each: format.split(", ")){
+            xpath+=each;
+        }
+        return xpath;
     }
 }
