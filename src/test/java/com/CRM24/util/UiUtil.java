@@ -15,7 +15,7 @@ public class UiUtil {
     static String parentWindow;
     static WebDriver driver = Driver.getDriver();
     static Actions action = new Actions(Driver.getDriver());
-    static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+    static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
 
 
     public static String get_xpath(String format, String value){

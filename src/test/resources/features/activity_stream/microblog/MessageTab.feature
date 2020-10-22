@@ -91,10 +91,10 @@ Feature: MessageTab
   @addTitle
   Scenario: write a message with a title
     When user clicks on post button Topic
-    And  user writes "title2" in title block
-    And  user writes "content2" in content box
+    And  user writes "title4" in title block
+    And  user writes "content4" in content box
     And  user clicks send button
-    Then user verify new feed message title
+    Then user verify new feed message title "title4"
 
 
 
