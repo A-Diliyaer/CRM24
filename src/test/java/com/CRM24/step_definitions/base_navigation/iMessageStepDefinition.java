@@ -1,9 +1,9 @@
 package com.CRM24.step_definitions.base_navigation;
 
-import com.CRM24.pages.base_navigation_page.iMessage;
+import com.CRM24.pages.base_navigation_page.Messenger;
 
 public class iMessageStepDefinition {
 
-    iMessage msg = new iMessage();
+    Messenger msg = new Messenger();
 
 }
