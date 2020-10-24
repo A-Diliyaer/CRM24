@@ -2,8 +2,6 @@ package com.CRM24.pages.activity_stream;
 
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class TaskTab extends ActivityStreamPage {
 
@@ -63,5 +61,8 @@ public class TaskTab extends ActivityStreamPage {
         }
         UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_TIME_SELECT_BTN);
     }
+
+
+
 
 }

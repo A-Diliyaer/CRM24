@@ -27,7 +27,7 @@ public class XpathUtil {
     public static final String MSG_tAB_RECORD_VIDEO_BTN = "//div[contains(@class,'form-wrap')]//span[.='Record Video']";
     public static final String MSG_TAB_UPLOAD_LOCAL_FILE = "//input[@name='bxu_files[]']";
     public static final String MSG_TAB_ATTACHED_FILE = "//span[@title='Click to insert file']";
-    public static final String MSG_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
+    public static final String GEN_MSG_TASK_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
     public static final String MSG_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe']";
     public static final String CONTENT_BOX = "//body";
     public static final String MSG_TAB_ADD_DESTINATION = "//a[.='Add more']";
@@ -67,6 +67,27 @@ public class XpathUtil {
     public static final String CALENDAR_POPUP_TIME_MIN_INPUT = "//input[@class='bx-calendar-form-input'][2]";
     public static final String CALENDAR_POPUP_TIME_SELECT_BTN = "//a[@data-action='submit']";
     public static final String TASK_MULTI_ROLE_POPUP_CLOSE = "//div[contains(@id,'MULTIPLE_RESPONSIBLES')]//span";
+    public static final String GEN_TASK_ADDITIONAL_POPUP_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')]";
+    public static final String TASK_PLANNED_TIME_FORMAT = "//input[contains(@class,'%s task-options-inp')]";
+    public static final String TASK_REMINDER_BOX = "//span[.='Add reminder']";
+    public static final String TASK_REMINDER_CALENDAR_BOX = "//span[@data-bx-id='form-date']/input";
+    public static final String TASK_REMINDER_ASSIGNEE = "//select[@data-bx-id='form-change-recipient']";
+    public static final String TASK_REMINDER_SEND_FORMAT = "//a[@title='Send %s message']";
+    public static final String TASK_REMIDNER_ADD_BTN = "//button[@data-bx-id='form-submit']";
+    public static final String TASK_REMINDER_CLOSE_POPUP = "//div[contains(@id,'reminder')]//span[@class='popup-window-close-icon']";
+    public static final String TASK_ADD_PREVIOUS_TASK = "//span[.='Add previous task']";
+    public static final String TASK_PREVIOUS_TASK_SEARCH_BOX = "//input[contains(@name,'fb_task_input')]";
+    public static final String GEN_PREVIOUS_TASK_LIST_FORMAT = "//div[contains(@id,'projdep-item-set-popup')]//div[.='%s']";
+    public static final String TASK_PREVIOUS_TASK_POPUP_BTN_FORMAT = "//div[@class='popup-window-buttons']/span[.='%s']";
+    public static final String TASK_PARENT_DEPENDSON_SEARCH_BOX = "//input[contains(@name,'parenttask_task_input')]";
+    public static final String TASK_PARENT_DEPENDSON_POPUP_BTN_FORMAT = "//div[@id='task-item-set-popup%s']//span[.='%s']";
+    public static final String TASK_PARENT_DEPENDSON_LIST_FORMAT = "//div[contains(@id,'%s_last_task_%s')]";
+    public static final String TASK_ADD_TAGS_BOX = "//div[@id='task-tags-popup']//input";
+    public static final String TASK_ADD_TAGS_TO_LIST = "//div[@id='task-tags-popup']//div[@title='Add New Tags']";
+    public static final String TASK_NEW_TAGS_LIST_ITEM = "//div[@id='task-tags-popup']//input[following-sibling::label[.='%s']]";
+    public static final String TASK_TAGS_POPUP_BTN_FORMAT = "//div[@id='task-tags-popup']//span[.='%s']";
+
+
 
 
     /**
