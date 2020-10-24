@@ -106,7 +106,7 @@ public class UiUtil {
     }
 
     public static boolean elementDisplayed(String xpath){
-        return wait.until(ExpectedConditions.visibilityOf(get_webElement(xpath))).isDisplayed();
+            return get_webElement(xpath).isDisplayed();
     }
 
     public static void driverSwitchFrame(String xpath){

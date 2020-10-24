@@ -29,11 +29,11 @@ public class XpathUtil {
     public static final String MSG_TAB_ATTACHED_FILE = "//span[@title='Click to insert file']";
     public static final String MSG_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
     public static final String MSG_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe']";
-    public static final String MSG_TAB_CONTENT_BOX = "//body";
+    public static final String CONTENT_BOX = "//body";
     public static final String MSG_TAB_ADD_DESTINATION = "//a[.='Add more']";
-    public static final String GEN_MSG_DESTINATION_POPUP_FORMAT = "//div[@id='BXSocNetLogDestination']//a[contains(.,'%s')]";
+    public static final String GEN_DESTINATION_POPUP_FORMAT = "//div[@id='BXSocNetLogDestination']//a[contains(.,'%s')]";
     public static final String MSG_DESTINATION_ITEM = "//span[@id='feed-add-post-destination-item']";
-    public static final String MSG_DESTINATION_POPUP_CLOSE = "//span[@class='popup-window-close-icon']";
+    public static final String POPUP_WINDOW_CLOSE = "//div[contains(@id,'BXSocNetLogDestination')]//span[@class='popup-window-close-icon']";
     public static final String GEN_ADMIN_DIALOG_INPUT_FORMAT = "//input[contains(@placeholder,'%s')]";
     public static final String GEN_ADMIN_DIALOG_SAVE_CANCEL_FORMAT = "//div[contains(@style,'display: block')]//input[@value='%s']";
     public static final String ADMIN_DIAOLOG_VIDEO_FRAME = "//div[@class='bx-core-adm-dialog-content']//iframe";
@@ -48,6 +48,26 @@ public class XpathUtil {
     /**
      * Activity Stream Task tab xpath format
      */
+    public static final String TASK_TAB_TITLE_BLOCK = "//input[@data-bx-id='task-edit-title']";
+    public static final String TASK_TAB_TITLE_PRIORITY = "//input[@data-bx-id='task-edit-priority-cb']";
+    public static final String TASK_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe'][ancestor::*[contains(@*,'task')]]";
+    public static final String GEN_TASK_TAB_ROLE_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')][%s]";
+    public static final String TASK_TAB_ADDITIONAL_EDIT = "//div[@data-bx-id='task-edit-additional-header']";
+    public static final String TASK_TAB_ROLE_CANCEL_SELECTION = "//div[span[.='%s']]//span[@title='Cancel selection']";
+    public static final String GEN_TASK_CREATE_ROLE_FORMAT = "//span[@class='task-dashed-link-inner'][.='%s']";
+    public static final String TASK_MULTI_ROLE_POPUP_MSG = "//div[@id='TASK_EDIT_MULTIPLE_RESPONSIBLES']";
+    public static final String TASK_DEADLINE_INPUT_BOX = "//span[@data-bx-id='dateplanmanager-deadline']";
+    public static final String CALENDAR_POPUP_HEADER_YEAR = "//a[@class='bx-calendar-top-year']";
+    public static final String CALENDAR_POPUP_HEADER_MONTH = "//a[@class='bx-calendar-top-month']";
+    public static final String CALENDAR_POPUP_MONTH_CONTENT = "//div[@class='bx-calendar-month-content']/span[.='%s']";
+    public static final String CALENDAR_POPUP_YEAR_CONTENT = "//div[@class='bx-calendar-year-content']/span[.='%s']";
+    public static final String CALENDAR_POPUP_DAY_CONTENT = "//a[contains(@class,'bx-calendar-cell')][.='%s']";
+    public static final String CALENDAR_POPUP_AMPM = "//span[@class='bx-calendar-AM-PM-text']";
+    public static final String CALENDAR_POPUP_TIME_HR_INPUT = "//input[@class='bx-calendar-form-input'][1]";
+    public static final String CALENDAR_POPUP_TIME_MIN_INPUT = "//input[@class='bx-calendar-form-input'][2]";
+    public static final String CALENDAR_POPUP_TIME_SELECT_BTN = "//a[@data-action='submit']";
+    public static final String TASK_MULTI_ROLE_POPUP_CLOSE = "//div[contains(@id,'MULTIPLE_RESPONSIBLES')]//span";
+
 
     /**
      * Activity Stream Feed log
