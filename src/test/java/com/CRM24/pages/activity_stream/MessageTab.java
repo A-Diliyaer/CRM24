@@ -9,7 +9,7 @@ public class MessageTab extends ActivityStreamPage {
 
     public void writeMsg(String msg){
         UiUtil.driverSwitchFrame(XpathUtil.MSG_TAB_CONTENT_FRAME);
-        UiUtil.sendTextToElement(XpathUtil.MSG_TAB_CONTENT_BOX,msg);
+        UiUtil.sendTextToElement(XpathUtil.CONTENT_BOX,msg);
         UiUtil.driverSwitchDefault();
     }
 
@@ -30,7 +30,7 @@ public class MessageTab extends ActivityStreamPage {
     }
 
     public void sendMsg(){
-        UiUtil.clickElement(XpathUtil.MSG_TAB_SEND_BTN);
+        UiUtil.clickElement(XpathUtil.GEN_MSG_TASK_TAB_SEND_BTN);
     }
 
     public void clickDestinationBox(){
@@ -38,11 +38,11 @@ public class MessageTab extends ActivityStreamPage {
     }
 
     public void clickDestinationSubTab(String tab){
-        UiUtil.clickElement(XpathUtil.GEN_MSG_DESTINATION_POPUP_FORMAT,tab);
+        UiUtil.clickElement(XpathUtil.GEN_DESTINATION_POPUP_FORMAT,tab);
     }
 
     public void selectEmployee(String employee){
-        UiUtil.clickElement(XpathUtil.GEN_MSG_DESTINATION_POPUP_FORMAT,employee);
+        UiUtil.clickElement(XpathUtil.GEN_DESTINATION_POPUP_FORMAT,employee);
     }
 
     public boolean selectedEmployeelisted(String employee){
@@ -50,11 +50,11 @@ public class MessageTab extends ActivityStreamPage {
     }
 
     public void deselectAllEmployee(){
-        UiUtil.clickElement(XpathUtil.GEN_MSG_DESTINATION_POPUP_FORMAT,"All employees");
+        UiUtil.clickElement(XpathUtil.GEN_DESTINATION_POPUP_FORMAT,"All employees");
     }
 
     public void closePopup(){
-        UiUtil.clickElement(XpathUtil.MSG_DESTINATION_POPUP_CLOSE);
+        UiUtil.clickElement(XpathUtil.POPUP_WINDOW_CLOSE);
     }
 
     public void inputField(String input, String field){
