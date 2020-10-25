@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/activity_stream/microblog",
         dryRun = false,
         strict = false,
-        tags = "@createTask",
+        tags = "@createEvent",
         plugin = {
                 "html:target/cucumber-html-report",
                 "json:target/cucumber1.json",
