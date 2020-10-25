@@ -1,5 +1,6 @@
 package com.CRM24.pages.activity_stream;
 
+import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import org.openqa.selenium.support.ui.Select;
@@ -48,6 +49,7 @@ public class TaskTab extends ActivityStreamPage {
         if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_YEAR).equals(date[0])){
             UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_HEADER_YEAR);
             UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_YEAR_CONTENT,date[2]);
+            BrowserUtils.wait(1);
         }
         if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_MONTH).equals(date[0])){
             UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_HEADER_MONTH);
@@ -96,6 +98,7 @@ public class TaskTab extends ActivityStreamPage {
 
     public void selectReminderType(String type){
         UiUtil.clickElement(XpathUtil.TASK_REMINDER_SEND_FORMAT,type);
+        clickReminderAdd();
     }
 
     public void clickReminderAdd(){
@@ -114,7 +117,7 @@ public class TaskTab extends ActivityStreamPage {
         if (type.equals("Subtask of")) parentSon="parenttask";
         if (type.equals("Dependent tasks")) parentSon="dependson";
         UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_LIST_FORMAT,parentSon,taskNum);
-        UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_POPUP_BTN_FORMAT,"Select");
+        UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_POPUP_BTN_FORMAT,parentSon,"Select");
 
     }
 
