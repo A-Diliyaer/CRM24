@@ -1,6 +1,7 @@
 package com.CRM24.step_definitions.activity_stream;
 
 import com.CRM24.pages.activity_stream.MessageTab;
+import com.CRM24.util.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -28,6 +29,7 @@ public class MessageTabStepDefinition {
     @When("user clicks send button")
     public void userClicksSendButton() {
         msgTab.sendMsg();
+        BrowserUtils.wait(5);
     }
 
     @When("user writes {string} in content box")

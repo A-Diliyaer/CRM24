@@ -61,13 +61,14 @@ public class XpathUtil {
     public static final String CALENDAR_POPUP_HEADER_MONTH = "//a[@class='bx-calendar-top-month']";
     public static final String CALENDAR_POPUP_MONTH_CONTENT = "//div[@class='bx-calendar-month-content']/span[.='%s']";
     public static final String CALENDAR_POPUP_YEAR_CONTENT = "//div[@class='bx-calendar-year-content']/span[.='%s']";
-    public static final String CALENDAR_POPUP_DAY_CONTENT = "//a[contains(@class,'bx-calendar-cell')][.='%s']";
+    public static final String CALENDAR_POPUP_DAY_CONTENT = "//a[@class='bx-calendar-cell'][.='%s']";
     public static final String CALENDAR_POPUP_AMPM = "//span[@class='bx-calendar-AM-PM-text']";
     public static final String CALENDAR_POPUP_TIME_HR_INPUT = "//input[@class='bx-calendar-form-input'][1]";
     public static final String CALENDAR_POPUP_TIME_MIN_INPUT = "//input[@class='bx-calendar-form-input'][2]";
     public static final String CALENDAR_POPUP_TIME_SELECT_BTN = "//a[@data-action='submit']";
     public static final String TASK_MULTI_ROLE_POPUP_CLOSE = "//div[contains(@id,'MULTIPLE_RESPONSIBLES')]//span";
     public static final String GEN_TASK_ADDITIONAL_POPUP_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')]";
+    public static final String GEN_TASK_TAB_CHECKBOX_FORMAT = "//input[@type='checkbox'][parent::label[contains(.,'%s')]]";
     public static final String TASK_PLANNED_TIME_FORMAT = "//input[contains(@class,'%s task-options-inp')]";
     public static final String TASK_REMINDER_BOX = "//span[.='Add reminder']";
     public static final String TASK_REMINDER_CALENDAR_BOX = "//span[@data-bx-id='form-date']/input";
@@ -86,7 +87,19 @@ public class XpathUtil {
     public static final String TASK_ADD_TAGS_TO_LIST = "//div[@id='task-tags-popup']//div[@title='Add New Tags']";
     public static final String TASK_NEW_TAGS_LIST_ITEM = "//div[@id='task-tags-popup']//input[following-sibling::label[.='%s']]";
     public static final String TASK_TAGS_POPUP_BTN_FORMAT = "//div[@id='task-tags-popup']//span[.='%s']";
-
+    /**
+     * Activity Stream Event tab xpath format
+     */
+    public static final String EVENT_TITLE_BLOCK = "//div[@class='feed-event']//input[@placeholder='Event name']";
+    public static final String EVENT_CONTENT_BLOCK = "//div[@class='feed-event']//iframe";
+    public static final String GEN_EVENT_POST_BTN_FORMAT = "//span[contains(@title,'%s')][ancestor::*[contains(@*,'event')]]";
+    public static final String GEN_EVENT_START_END_FORMAT = "//span[contains(@class,'event-from-to')]//input[contains(@name,'%s')]";
+    public static final String EVENT_CLOCK_HOUR_MINUTE_FORMAT = "//div[contains(@id,'event_%s')]//input[@title='%s']";
+    public static final String EVENT_CLOCK_SET_TIME_FORMAT = "//div[contains(@id,'event_%s')]//input[@value='Set Time']";
+    public static final String EVENT_CLOCK_AMPM_FORMAT = "//div[contains(@id,'event_%s')]//span[@class='bxc-am-pm']";
+    public static final String EVENT_CLOCK_HR_MIN_ARM_FORMAT = "//img[@class='bxc-%s-arr-cont bxc-iconkit-a']";
+    public static final String EVENT_ADDITIONAL_MORE_BTN = "//div[@id='feed-cal-additional']/span";
+    public static final String GEN_EVENT_SELECT_DROPDOWN_FORMAT = "//td[label[.='%s']]/following-sibling::td/select";
 
 
 
