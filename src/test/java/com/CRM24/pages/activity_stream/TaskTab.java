@@ -2,6 +2,7 @@ package com.CRM24.pages.activity_stream;
 
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
+import org.openqa.selenium.support.ui.Select;
 
 public class TaskTab extends ActivityStreamPage {
 
@@ -42,7 +43,6 @@ public class TaskTab extends ActivityStreamPage {
     }
 
     public void setDeadLine(String deadline){
-        UiUtil.clickElement(XpathUtil.TASK_DEADLINE_INPUT_BOX);
         String[] date = deadline.split("-")[0].split(" ");
         String[] time = deadline.split("-")[1].split(" ");
         if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_YEAR).equals(date[0])){
@@ -61,6 +61,64 @@ public class TaskTab extends ActivityStreamPage {
         }
         UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_TIME_SELECT_BTN);
     }
+
+    public void clickDeadlineBox(){
+        UiUtil.clickElement(XpathUtil.TASK_DEADLINE_INPUT_BOX);
+    }
+
+    public void clickMoreOptions(){
+        UiUtil.clickElement(XpathUtil.TASK_TAB_ADDITIONAL_EDIT);
+    }
+
+    public void clickAdd(String module){
+        UiUtil.clickElement(XpathUtil.GEN_TASK_ADDITIONAL_POPUP_FORMAT,module);
+    }
+
+    public void selectCheckBox(String name){
+        UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_CHECKBOX_FORMAT,name);
+    }
+
+    public void enterTaskHourAndMinute(String hr, String min){
+        UiUtil.sendTextToElement(XpathUtil.TASK_PLANNED_TIME_FORMAT,"hour",hr);
+        UiUtil.sendTextToElement(XpathUtil.TASK_PLANNED_TIME_FORMAT,"minute",min);
+    }
+
+    public void addReminder(String date){
+        UiUtil.clickElement(XpathUtil.TASK_REMINDER_BOX);
+        UiUtil.clickElement(XpathUtil.TASK_REMINDER_CALENDAR_BOX);
+        setDeadLine(date);
+    }
+
+    public void selectAssignee(String assignee){
+        Select select = new Select(UiUtil.get_webElement(XpathUtil.TASK_REMINDER_ASSIGNEE));
+        select.selectByVisibleText(assignee);
+    }
+
+    public void selectReminderType(String type){
+        UiUtil.clickElement(XpathUtil.TASK_REMINDER_SEND_FORMAT,type);
+    }
+
+    public void clickReminderAdd(){
+        UiUtil.clickElement(XpathUtil.TASK_REMIDNER_ADD_BTN);
+    }
+
+    public void clickPreviousTaskBtn(String task){
+        UiUtil.clickElement(XpathUtil.TASK_ADD_PREVIOUS_TASK);
+        UiUtil.clickElement(XpathUtil.GEN_PREVIOUS_TASK_LIST_FORMAT,task);
+        UiUtil.clickElement(XpathUtil.TASK_PREVIOUS_TASK_POPUP_BTN_FORMAT,"Select");
+    }
+
+    public void addParentChildTask(String type, String taskNum){
+        UiUtil.clickElement(XpathUtil.GEN_TASK_ADDITIONAL_POPUP_FORMAT,type);
+        String parentSon = "";
+        if (type.equals("Subtask of")) parentSon="parenttask";
+        if (type.equals("Dependent tasks")) parentSon="dependson";
+        UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_LIST_FORMAT,parentSon,taskNum);
+        UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_POPUP_BTN_FORMAT,"Select");
+
+    }
+
+
 
 
 

@@ -68,6 +68,7 @@ public class XpathUtil {
     public static final String CALENDAR_POPUP_TIME_SELECT_BTN = "//a[@data-action='submit']";
     public static final String TASK_MULTI_ROLE_POPUP_CLOSE = "//div[contains(@id,'MULTIPLE_RESPONSIBLES')]//span";
     public static final String GEN_TASK_ADDITIONAL_POPUP_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')]";
+    public static final String GEN_TASK_TAB_CHECKBOX_FORMAT = "//input[@type='checkbox'][parent::label[contains(.,'%s')]]";
     public static final String TASK_PLANNED_TIME_FORMAT = "//input[contains(@class,'%s task-options-inp')]";
     public static final String TASK_REMINDER_BOX = "//span[.='Add reminder']";
     public static final String TASK_REMINDER_CALENDAR_BOX = "//span[@data-bx-id='form-date']/input";
