@@ -19,6 +19,8 @@ public class XpathUtil {
     public static final String CLOCK_POPUP_HR_MIN_FORMAT = "//input[@title='%s']";
     public static final String CLOCK_POPUP_AM_PM = "//span[@class='bxc-am-pm']";
     public static final String CLOCK_POPUP_SELECT_BTN = "//div[@id='clock_selector_popup']//span[.='Select']";
+    public static final String CONTENT_BOX = "//body";
+    public static final String GEN_ADD_CONTACT = "//a[.='Add more']";
     /**
      * Activity Stream Message tab xpath format
      */
@@ -27,12 +29,10 @@ public class XpathUtil {
     public static final String MSG_tAB_RECORD_VIDEO_BTN = "//div[contains(@class,'form-wrap')]//span[.='Record Video']";
     public static final String MSG_TAB_UPLOAD_LOCAL_FILE = "//input[@name='bxu_files[]']";
     public static final String MSG_TAB_ATTACHED_FILE = "//span[@title='Click to insert file']";
-    public static final String GEN_MSG_TASK_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
+    public static final String GEN_TASK_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
     public static final String MSG_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe']";
-    public static final String CONTENT_BOX = "//body";
-    public static final String MSG_TAB_ADD_DESTINATION = "//a[.='Add more']";
     public static final String GEN_DESTINATION_POPUP_FORMAT = "//div[@id='BXSocNetLogDestination']//a[contains(.,'%s')]";
-    public static final String MSG_DESTINATION_ITEM = "//span[@id='feed-add-post-destination-item']";
+    public static final String GEN_DESTINATION_ITEM = "//span[@id='feed-add-post-destination-item']";
     public static final String POPUP_WINDOW_CLOSE = "//div[contains(@id,'BXSocNetLogDestination')]//span[@class='popup-window-close-icon']";
     public static final String GEN_ADMIN_DIALOG_INPUT_FORMAT = "//input[contains(@placeholder,'%s')]";
     public static final String GEN_ADMIN_DIALOG_SAVE_CANCEL_FORMAT = "//div[contains(@style,'display: block')]//input[@value='%s']";
@@ -100,8 +100,15 @@ public class XpathUtil {
     public static final String EVENT_CLOCK_HR_MIN_ARM_FORMAT = "//img[@class='bxc-%s-arr-cont bxc-iconkit-a']";
     public static final String EVENT_ADDITIONAL_MORE_BTN = "//div[@id='feed-cal-additional']/span";
     public static final String GEN_EVENT_SELECT_DROPDOWN_FORMAT = "//td[label[.='%s']]/following-sibling::td/select";
-
-
+    /**
+     * Activity Stream Pol tab xpath format
+     */
+    public static final String POLL_TAB_TITLE_BLOCK = "//input[@id='POST_TITLE']";
+    public static final String POLL_CONTENT_BLOCK = "//iframe[@class='bx-editor-iframe']";
+    public static final String GEN_POLL_QUESTION_INPUT_FORMAT = "//li[@class='vote-question'][%s]//input[contains(@placeholder,'Question')]";
+   public static final String GEN_POLL_ANSWER_INPUT_FORMAT = "//li[@class='vote-question'][%s]//input[contains(@placeholder,'Answer  %s')]";
+    public static final String GEN_POLL_Q_A_CHECKBOX_FORMAT = "//li[@class='vote-question'][%s]//input[@type='checkbox']";
+    public static final String POLL_ADD_QUESTION = "//a[.='Add question']";
 
     /**
      * Activity Stream Feed log
@@ -116,8 +123,4 @@ public class XpathUtil {
     public static final String NEW_FEED_ATTACHED_MENTION = "//div[@class='feed-item-wrap'][1]//span/a[.='%s']";
     public static final String NEW_FEED_ATTACHED_TAG = "//div[@class='feed-item-wrap'][1]//a[@bx-tag-value='%s']";
     public static final String NEW_FEED_MSG_TITLE = "//div[@class='feed-item-wrap'][1]//a[@class='feed-post-title']";
-
-
-
-
 }

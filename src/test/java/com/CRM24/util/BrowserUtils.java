@@ -64,7 +64,6 @@ public class BrowserUtils {
     }
 
     /**
-     *
      * @param name screenshot name
      * @return path to the screenshot
      */
