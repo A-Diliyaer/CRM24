@@ -95,6 +95,7 @@ public class MessageTab extends ActivityStreamPage {
     public void selectTextFormat(String format){
         Arrays.stream(format.split(",")).map(String::trim).forEach(each->UiUtil.clickElement(
                 XpathUtil.GEN_MSG_TAB_EDITOR_TOOLS_FORMAT,each));
+        
     }
 
     public void writeTitle(String title){

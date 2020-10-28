@@ -1,7 +1,7 @@
-Feature: add custom events and post
-  As a usr I want to create custom events
+Feature: add custom polls and post
+  As a usr I want to create custom polls
 
-  Background: user navigate to event tab
+  Background: user navigate to poll tab
     Given user is on the login page
     And user logs in as helpdesk
     And user clicks menu "Activity Stream"

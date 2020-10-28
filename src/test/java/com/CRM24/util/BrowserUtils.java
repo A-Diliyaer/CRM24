@@ -35,9 +35,9 @@ public class BrowserUtils {
     /**
      * wait for page load after click action
      */
-    public static void waitForLoad(){
+    public static void waitForFeedLoad(){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
-        By mask =By.xpath("//body/div[4]");
+        By mask =By.xpath(XpathUtil.FEED_LOADER);
         wait.until(ExpectedConditions.presenceOfElementLocated(mask));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(mask));
     }
