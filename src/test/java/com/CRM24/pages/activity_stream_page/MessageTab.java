@@ -1,4 +1,4 @@
-package com.CRM24.pages.activity_stream;
+package com.CRM24.pages.activity_stream_page;
 
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
@@ -30,11 +30,11 @@ public class MessageTab extends ActivityStreamPage {
     }
 
     public void sendMsg(){
-        UiUtil.clickElement(XpathUtil.GEN_MSG_TASK_TAB_SEND_BTN);
+        UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_SEND_BTN);
     }
 
     public void clickDestinationBox(){
-        UiUtil.clickElement(XpathUtil.MSG_TAB_ADD_DESTINATION);
+        UiUtil.clickElement(XpathUtil.GEN_ADD_CONTACT);
     }
 
     public void clickDestinationSubTab(String tab){
@@ -46,7 +46,7 @@ public class MessageTab extends ActivityStreamPage {
     }
 
     public boolean selectedEmployeelisted(String employee){
-        return UiUtil.getTextFromElement(XpathUtil.MSG_DESTINATION_ITEM).contains(employee);
+        return UiUtil.getTextFromElement(XpathUtil.GEN_DESTINATION_ITEM).contains(employee);
     }
 
     public void deselectAllEmployee(){
@@ -95,6 +95,7 @@ public class MessageTab extends ActivityStreamPage {
     public void selectTextFormat(String format){
         Arrays.stream(format.split(",")).map(String::trim).forEach(each->UiUtil.clickElement(
                 XpathUtil.GEN_MSG_TAB_EDITOR_TOOLS_FORMAT,each));
+        
     }
 
     public void writeTitle(String title){

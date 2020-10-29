@@ -19,6 +19,8 @@ public class XpathUtil {
     public static final String CLOCK_POPUP_HR_MIN_FORMAT = "//input[@title='%s']";
     public static final String CLOCK_POPUP_AM_PM = "//span[@class='bxc-am-pm']";
     public static final String CLOCK_POPUP_SELECT_BTN = "//div[@id='clock_selector_popup']//span[.='Select']";
+    public static final String CONTENT_BOX = "//body";
+    public static final String GEN_ADD_CONTACT = "//a[.='Add more']";
     /**
      * Activity Stream Message tab xpath format
      */
@@ -27,12 +29,10 @@ public class XpathUtil {
     public static final String MSG_tAB_RECORD_VIDEO_BTN = "//div[contains(@class,'form-wrap')]//span[.='Record Video']";
     public static final String MSG_TAB_UPLOAD_LOCAL_FILE = "//input[@name='bxu_files[]']";
     public static final String MSG_TAB_ATTACHED_FILE = "//span[@title='Click to insert file']";
-    public static final String GEN_MSG_TASK_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
+    public static final String GEN_TASK_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
     public static final String MSG_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe']";
-    public static final String CONTENT_BOX = "//body";
-    public static final String MSG_TAB_ADD_DESTINATION = "//a[.='Add more']";
     public static final String GEN_DESTINATION_POPUP_FORMAT = "//div[@id='BXSocNetLogDestination']//a[contains(.,'%s')]";
-    public static final String MSG_DESTINATION_ITEM = "//span[@id='feed-add-post-destination-item']";
+    public static final String GEN_DESTINATION_ITEM = "//span[@id='feed-add-post-destination-item']";
     public static final String POPUP_WINDOW_CLOSE = "//div[contains(@id,'BXSocNetLogDestination')]//span[@class='popup-window-close-icon']";
     public static final String GEN_ADMIN_DIALOG_INPUT_FORMAT = "//input[contains(@placeholder,'%s')]";
     public static final String GEN_ADMIN_DIALOG_SAVE_CANCEL_FORMAT = "//div[contains(@style,'display: block')]//input[@value='%s']";
@@ -100,13 +100,42 @@ public class XpathUtil {
     public static final String EVENT_CLOCK_HR_MIN_ARM_FORMAT = "//img[@class='bxc-%s-arr-cont bxc-iconkit-a']";
     public static final String EVENT_ADDITIONAL_MORE_BTN = "//div[@id='feed-cal-additional']/span";
     public static final String GEN_EVENT_SELECT_DROPDOWN_FORMAT = "//td[label[.='%s']]/following-sibling::td/select";
-
-
+    /**
+     * Activity Stream PolL tab xpath format
+     */
+    public static final String POLL_TAB_TITLE_BLOCK = "//input[@id='POST_TITLE']";
+    public static final String POLL_CONTENT_BLOCK = "//iframe[@class='bx-editor-iframe']";
+    public static final String GEN_POLL_QUESTION_INPUT_FORMAT = "//li[@class='vote-question'][%s]//input[contains(@placeholder,'Question')]";
+   public static final String GEN_POLL_ANSWER_INPUT_FORMAT = "//li[@class='vote-question'][%s]//input[contains(@placeholder,'Answer  %s')]";
+    public static final String GEN_POLL_Q_A_CHECKBOX_FORMAT = "//li[@class='vote-question'][%s]//input[@type='checkbox']";
+    public static final String POLL_ADD_QUESTION = "//a[.='Add question']";
 
     /**
      * Activity Stream Feed log
      */
-    public static final String ACTIVITY_NEW_FEED = "//div[@class='feed-item-wrap'][1]";
+    public static final String ACTIVITY_NEW_FEED = "//div[@id='log_internal_container']/div[@class='feed-wrap']/div[1]";
+    public static final String ACTIVITY_NEW_FEED_USER = ACTIVITY_NEW_FEED+"//a[@class='user-name']";
+    public static final String ACTIVITY_FEED_DESTINATION = ACTIVITY_NEW_FEED+"//span[@class='feed-add-post-destination-cont']/*";
+    public static final String ACTIVITY_FEED_TIME_STAMP = ACTIVITY_NEW_FEED+"//div[@class='feed-post-time-wrap']";
+    public static final String ACTIVITY_FEED_ATTACHED_LINK = ACTIVITY_NEW_FEED+"//div[contains(@class,'contentview')]//a[.='%s']";
+    public static final String ACTIVITY_FEED_CONTENT_ANY_ELEMENT = ACTIVITY_NEW_FEED+"//div[contains(@class,'contentview')]//*[.='%s']";
+    public static final String ACTIVITY_FEED_CONTENT_IFRAME = ACTIVITY_NEW_FEED+"//iframe";
+    public static final String ACTIVITY_FEED_ATTACHED_FILE = ACTIVITY_NEW_FEED+"//div[@class='feed-com-files']//a";
+    public static final String ACTIVITY_FEED_ATTACHED_PHOTO = ACTIVITY_NEW_FEED+"//div[@class='feed-com-files']//img";
+    public static final String ACTIVITY_FEED_ATTACHED_VOTE = ACTIVITY_NEW_FEED+"//form[@class='vote-form']";
+    public static final String ACTIVITY_FEED_ATTACHED_TASK = ACTIVITY_NEW_FEED+"//div[@class='feed-task-info-block']//a";
+    public static final String ACTIVITY_FEED_INFORMER = ACTIVITY_NEW_FEED+"//div[@class='feed-post-informers-cont']//a[.='%s']";
+    public static final String ACTIVITY_FEED_INFORMER_VIEW = ACTIVITY_NEW_FEED+"//div[@class='feed-post-informers-cont']//span[contains(@id,'view')]";
+    public static final String ACTIVITY_FEED_INFORMER_POPUP_MENU = "//div[@class='menu-popup-items'][ancestor::div[contains(@id,'blog-post')]]";
+    public static final String ACTIVITY_FEED_INFORMER_VIEW_LIST = "//span[@class='bx-contentview-popup']/a[.='%s']";
+    public static final String ACTIVITY_FEED_COMMENT_FRAME = ACTIVITY_NEW_FEED+"//iframe[@class='bx-editor-iframe']";
+    public static final String ACTIVITY_FEED_POST_BTN_FORMAT = "//div[@id='log_internal_container']//span[contains(@title,'%s')]";
+    public static final String ACTIVITY_FEED_RECORD_VIDEO_BTN = "//div[@id='log_internal_container']//span[contains(.,'Record Video')]";
+    public static final String ACTIVITY_FEED_COMMENT_SEND_BTN = "//div[@id='log_internal_container']//button[.='Send']";
+    public static final String ACTIVITY_FEED_SEARCH_FILTER = "//div[contains(@id,'popup-window-content-LIVEFEED_search')]//span[.='%s']";
+    public static final String ACTIVITY_FEED_SEARCH_FILTER_FIELD = "//div[contains(@id,'popup-window-content-LIVEFEED_search')]//div[span[.='%s']]/div";
+    public static final String ACTIVITY_FEED_FILTER_SEARCH_BTN = "//div[contains(@id,'popup-window-content-LIVEFEED_search')]//button";
+    public static final String ACTIVITY_FEED_FILTER_RESET_BTN = ACTIVITY_FEED_FILTER_SEARCH_BTN+"/following-sibling::span";
     public static final String NEW_FEED_ATTACHED_FILE = "//a[.='%s']";
     public static final String NEW_FEED_ATTACHED_IMG = "//*[@data-bx-title='%s']";
     public static final String ACTIVITY_NEW_FEED_TO = "//div[@class='feed-item-wrap'][1]//span[@class='feed-add-post-destination-cont']";
@@ -116,6 +145,23 @@ public class XpathUtil {
     public static final String NEW_FEED_ATTACHED_MENTION = "//div[@class='feed-item-wrap'][1]//span/a[.='%s']";
     public static final String NEW_FEED_ATTACHED_TAG = "//div[@class='feed-item-wrap'][1]//a[@bx-tag-value='%s']";
     public static final String NEW_FEED_MSG_TITLE = "//div[@class='feed-item-wrap'][1]//a[@class='feed-post-title']";
+    public static final String FEED_LOADER = "//div[@class='feed-loader-container livefeed-show-loader']";
+    public static final String LIVE_FEED_SEARCH = "//input[@id='LIVEFEED_search']";
+    /**
+     * Activity Stream Side Bar xpath format
+     */
+    public static final String SIDE_BAR_COMPANY_PULSE = "//div[@id='sidebar']//*[.='Company Pulse']";
+    public static final String SIDE_BAR_ANNOUNCEMENT_LINK = "//div[@id='sidebar']//*[contains(.,'Announcements')]//a";
+    public static final String SIDE_BAR_ANNOUNCEMENT_MARK_AS_READ = "//div[@id='sidebar']//*[.='Mark as read']";
+    public static final String SIDE_BAR_ANNOUNCEMENT_NAV_FORMAT = "//div[@id='sidebar']//*[contains(@id,'%s')]";
+    public static final String SIDE_BAR_ADD_NEW_TASK_EVENT_FORMAT = "//div[@id='sidebar']//*[contains(.,'%s')]/a";
+    public static final String GEN_SIDE_BAR_LINKS_FORMAT = "//div[@id='sidebar']//a[contains(.,'%s')]";
+    public static final String GEN_SIDE_BAR_POPULAR_BIRTHDAY_LIST = "//div[@id='sidebar']/div[contains(.,'%s')]/a";
+    public static final String SIDE_BAR_UPCOMING_EVENTS_LIST = "//div[@id='sidebar']/div[contains(.,'Upcoming Events')]/div[2]/a";
+
+
+
+
 
 
 

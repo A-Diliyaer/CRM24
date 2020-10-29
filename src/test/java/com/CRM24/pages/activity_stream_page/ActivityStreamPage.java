@@ -1,12 +1,8 @@
-package com.CRM24.pages.activity_stream;
+package com.CRM24.pages.activity_stream_page;
 
 import com.CRM24.pages.base_navigation_page.AbstractPageBase;
-import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.Arrays;
 
 public class ActivityStreamPage extends AbstractPageBase {
 
