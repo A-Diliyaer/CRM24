@@ -1,4 +1,4 @@
-package com.CRM24.pages.activity_stream;
+package com.CRM24.pages.activity_stream_page;
 
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;

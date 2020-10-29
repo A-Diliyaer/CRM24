@@ -1,6 +1,6 @@
 package com.CRM24.step_definitions.activity_stream;
 
-import com.CRM24.pages.activity_stream.MessageTab;
+import com.CRM24.pages.activity_stream_page.MessageTab;
 import com.CRM24.util.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

@@ -1,6 +1,6 @@
 package com.CRM24.step_definitions.activity_stream;
 
-import com.CRM24.pages.activity_stream.ActivityStreamPage;
+import com.CRM24.pages.activity_stream_page.ActivityStreamPage;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import io.cucumber.java.en.And;

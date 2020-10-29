@@ -147,4 +147,23 @@ public class XpathUtil {
     public static final String NEW_FEED_MSG_TITLE = "//div[@class='feed-item-wrap'][1]//a[@class='feed-post-title']";
     public static final String FEED_LOADER = "//div[@class='feed-loader-container livefeed-show-loader']";
     public static final String LIVE_FEED_SEARCH = "//input[@id='LIVEFEED_search']";
+    /**
+     * Activity Stream Side Bar xpath format
+     */
+    public static final String SIDE_BAR_COMPANY_PULSE = "//div[@id='sidebar']//*[.='Company Pulse']";
+    public static final String SIDE_BAR_ANNOUNCEMENT_LINK = "//div[@id='sidebar']//*[contains(.,'Announcements')]//a";
+    public static final String SIDE_BAR_ANNOUNCEMENT_MARK_AS_READ = "//div[@id='sidebar']//*[.='Mark as read']";
+    public static final String SIDE_BAR_ANNOUNCEMENT_NAV_FORMAT = "//div[@id='sidebar']//*[contains(@id,'%s')]";
+    public static final String SIDE_BAR_ADD_NEW_TASK_EVENT_FORMAT = "//div[@id='sidebar']//*[contains(.,'%s')]/a";
+    public static final String GEN_SIDE_BAR_LINKS_FORMAT = "//div[@id='sidebar']//a[contains(.,'%s')]";
+    public static final String GEN_SIDE_BAR_POPULAR_BIRTHDAY_LIST = "//div[@id='sidebar']/div[contains(.,'%s')]/a";
+    public static final String SIDE_BAR_UPCOMING_EVENTS_LIST = "//div[@id='sidebar']/div[contains(.,'Upcoming Events')]/div[2]/a";
+
+
+
+
+
+
+
+
 }
