@@ -51,7 +51,7 @@ public class XpathUtil {
     public static final String TASK_TAB_TITLE_BLOCK = "//input[@data-bx-id='task-edit-title']";
     public static final String TASK_TAB_TITLE_PRIORITY = "//input[@data-bx-id='task-edit-priority-cb']";
     public static final String TASK_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe'][ancestor::*[contains(@*,'task')]]";
-    public static final String GEN_TASK_TAB_ROLE_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')][%s]";
+    public static final String GEN_TASK_TAB_ROLE_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')][2]";
     public static final String TASK_TAB_ADDITIONAL_EDIT = "//div[@data-bx-id='task-edit-additional-header']";
     public static final String TASK_TAB_ROLE_CANCEL_SELECTION = "//div[span[.='%s']]//span[@title='Cancel selection']";
     public static final String GEN_TASK_CREATE_ROLE_FORMAT = "//span[@class='task-dashed-link-inner'][.='%s']";
@@ -158,9 +158,40 @@ public class XpathUtil {
     public static final String GEN_SIDE_BAR_LINKS_FORMAT = "//div[@id='sidebar']//a[contains(.,'%s')]";
     public static final String GEN_SIDE_BAR_POPULAR_BIRTHDAY_LIST = "//div[@id='sidebar']/div[contains(.,'%s')]/a";
     public static final String SIDE_BAR_UPCOMING_EVENTS_LIST = "//div[@id='sidebar']/div[contains(.,'Upcoming Events')]/div[2]/a";
+    /**
+     * Tasks
+     */
+    public static final String GEN_TASKS_HEADER_LINKS_FORMAT = "//a[@class='main-buttons-item-link'][contains(.,'%s')]";
+    public static final String TASKS_MAIN_UI_FILTER_SEARCH = "//input[@class='main-ui-filter-search-filter']";
+    public static final String TASK_TABLE_ALL_TASKS_LIST = "//table[@class='main-grid-table']//tbody//td[3]//a";
+    public static final String GEN_TASK_KANBAN_COLUMN_ITEMS = "//div[@class='main-kanban-grid']/div[contains(.,'%s')]//div[@class='main-kanban-item']";
+    public static final String TASKS_POPUP_IFRAME = "//iframe[@class='side-panel-iframe']";
+    public static final String TASKS_POPUP_ADD_NEW = "//div[@class='tasks-iframe-header']//a";
+    public static final String TASKS_POPUP_USER_LINK = "//div[@class='task-detail-sidebar-content']/div[contains(.,'%s')]//a[contains(@class,'user-name')]";
+    public static final String TASKS_SEARCH_FILTER_SIDE_BAR = "//div[@class='main-ui-filter-sidebar']//span[.='%s']";
+    public static final String TASKS_SEARCH_FILTER_FIELD = "//div[@class='main-ui-filter-field-container']//div[span[.='%s']]/div";
+    public static final String TASKS_SEARCH_FILTER_ROLE_SELECT = "//div[@class='popup-select-content']/div[.='%s']";
+    public static final String TASKS_SEARCH_FILTER_FIELD_CONTROL ="//div[@class='main-ui-filter-field-add']/span[.='%s']";
+    public static final String TASKS_SEARCH_FILTER_FIELD_BTNS = "//div[@class='main-ui-filter-field-button-inner']/*[contains(.,'%s')]";
 
-
-
+    /**
+     * Calendar - Events
+     * SEARCH FILTER SAME WITH TASKS
+     * CALENDAR BLOCK SAME
+     */
+    public static final String CALENDAR_SEARCH_BOX = "//div[@class='page-header']//input";
+    public static final String CALENDAR_HEADER_LINKS = "//div[@class='page-header']//a[contains(.,'%s')]";
+    public static final String CALENDAR_HEADER_BTNS = "//div[@class='page-header']//button[contains(.,'%s')]";
+    public static final String CALENDAR_VIEW_ITEM = "//div[@class='page-header']//span[.='%s']";
+    public static final String CALENDAR_NAVIGATION = "//div[@class='calendar-top-block']//span[@class='calendar-navigation-%s']";
+    public static final String CALENDAR_VIEW_EVENT_TASK_FORMAT = "//div[contains(@class,'calendar-%s-view')]//span[.='%s']";
+    public static final String CALENDAR_DAY_VIEW_HOUR_ANIMATE = "//div[@class='calendar-day-view']//div[contains(@class,'hours-animate')]/div[.='%s']";
+    public static final String CALENDAR_DAY_VIEW_NEW_EVENT_POPUP_INPUTS = "//div[@class='calendar-add-popup-main-slide']//input[@placeholder='%s']";
+    public static final String CALENDAR_DAY_VIEW_NEW_EVENT_POPUP_COMPLETE_FORM = "//div[@class='calendar-add-popup-main-slide']//span[.='Complete form']";
+    public static final String CALENDAR_WEEK_VIEW_DAY_FORMAT = "//div[@data-bx-calendar-timeline-day='%s']";
+    public static final String CALENDAR_WEEK_VIEW_HOUR_LINE = "//div[contains(@class,'calendar-week-view')]//div[.='%s']";
+    public static final String CALENDAR_MONTH_VIEW_DAY_FORMAT = "//div[@data-bx-calendar-month-day='%s']";
+    public static final String CALENDAR_LIST_VIEW_DAY_ITEMS = "//div[@class='calendar-timeline-stream-day'][contains(.,'%s')]//div[@class='calendar-timeline-stream-content-event']";
 
 
 
