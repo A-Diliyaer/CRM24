@@ -193,6 +193,33 @@ public class XpathUtil {
     public static final String CALENDAR_MONTH_VIEW_DAY_FORMAT = "//div[@data-bx-calendar-month-day='%s']";
     public static final String CALENDAR_LIST_VIEW_DAY_ITEMS = "//div[@class='calendar-timeline-stream-day'][contains(.,'%s')]//div[@class='calendar-timeline-stream-content-event']";
 
+    /**
+     * Chat and Calls
+     */
+    public static final String MESSENGER_CURRENT_USER = "//div[@class='bx-desktop-appearance-menu']//a";
+    public static final String MESSENGER_DESKTOP_TABS = "//div[@class='bx-desktop-appearance-tab']/div[contains(@title,'%s')]";
+    public static final String MESSENGER_SEARCH_INPUT = "//div[contains(@class,'bx-messenger-box-contact')]//input";
+    public static final String MESSENGER_SEARCH_INPUT_CLOSE = "//div[contains(@class,'bx-messenger-box-contact')]//a";
+    public static final String MESSENGER_CONTACTS_LIST = "//div[contains(@class,' bx-messenger-recent-wrap')]/span";
+    public static final String MESSENGER_MESSAGEBOX_TOP_LINKS = "//div[contains(@class,'bx-messenger-context-user')]/a[.='%s']";
+    public static final String MESSENGER_MESSAGEBODY_ALL_MESSAGE = "//div[contains(@class,'bx-messenger-body-wrap')]/div[@data-type]";
+    public static final String MESSENGER_MESSAGE_TEXTAREA = "//div[@class='bx-messenger-textarea']/textarea";
+    public static final String MESSENGER_MESSAGE_TEXTAREA_ICONS = "//div[@class='bx-messenger-textarea-icons']/div[@title='%s']";
+    public static final String MESSENGER_MESSAGE_EMOJI_SELECT = "//span[@class='bx-messenger-smile-gallery-set']/img[@title='%s']";
+    public static final String MESSENGER_NOTIFICATION_ALL_LINK = "//span[@class='bx-notifier-item-content']//a[.='%s']";
+
+
+    /**
+     * Employess
+     */
+    public static final String EMPLOYEES_TOP_MENU_TAB = "//div[@id='top_menu_id_company']//a[contains(.,'%s')]";
+    public static final String EMPLOYEES_DEPT_STRUCTURE_LINKS = "//table[@id='bx_str_level1_table']//a[contains(.,'%s')]";
+    public static final String EMPLOYEES_DEPT_MANAGER_LINK = "//a[@class='department-manager-name-link']";
+    public static final String EMPLOYESS_DEPT_EMPLOYEE_LINK = "//table[@id='employee-table']//a[@class='%s']";
+    public static final String EMPLOYESS_PROFILE_MENU_BTN = "//div[@class='profile-menu-info']/span";
+    public static final String EMPLOEES_PROFILE_MENU_POPUP = "//div[@id='menu-popup-user-menu-profile']//span[.='%s']";
+    public static final String EMPLOYEES_PROFILE_MENU_ITEMS = "//div[@id='profile-menu-filter']/a[.='%s']";
+    public static final String EMPLOYEES_USR_PROFILE_BLOCK_LINKS = "//div[contains(@class,'user-profile-block')]//a[contains(.,'%s')]";
 
 
 

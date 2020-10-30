@@ -3,6 +3,7 @@ package com.CRM24.pages.activity_stream_page;
 import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 public class EventTab extends ActivityStreamPage{
@@ -67,14 +68,12 @@ public class EventTab extends ActivityStreamPage{
         UiUtil.clickElement(XpathUtil.EVENT_ADDITIONAL_MORE_BTN);
     }
 
-    public void selectFromDropDown(String category, String option){{
-        BrowserUtils.scrollTo(UiUtil.get_webElement(XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT,category));
-        Select select = new Select(UiUtil.get_webElement(
-                XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT,category));
-        UiUtil.clickElement(XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT,category);
-        select.selectByVisibleText(option);
-    }
-
-    }
+    public void selectFromDropDown(String category, String option) {
+            BrowserUtils.scrollTo(UiUtil.get_webElement(XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT, category));
+            Select select = new Select(UiUtil.get_webElement(
+                    XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT, category));
+            UiUtil.clickElement(XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT, category);
+            select.selectByVisibleText(option);
+        }
 
 }
