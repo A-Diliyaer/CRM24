@@ -109,7 +109,6 @@ public class XpathUtil {
    public static final String GEN_POLL_ANSWER_INPUT_FORMAT = "//li[@class='vote-question'][%s]//input[contains(@placeholder,'Answer  %s')]";
     public static final String GEN_POLL_Q_A_CHECKBOX_FORMAT = "//li[@class='vote-question'][%s]//input[@type='checkbox']";
     public static final String POLL_ADD_QUESTION = "//a[.='Add question']";
-
     /**
      * Activity Stream Feed log
      */
@@ -173,7 +172,6 @@ public class XpathUtil {
     public static final String TASKS_SEARCH_FILTER_ROLE_SELECT = "//div[@class='popup-select-content']/div[.='%s']";
     public static final String TASKS_SEARCH_FILTER_FIELD_CONTROL ="//div[@class='main-ui-filter-field-add']/span[.='%s']";
     public static final String TASKS_SEARCH_FILTER_FIELD_BTNS = "//div[@class='main-ui-filter-field-button-inner']/*[contains(.,'%s')]";
-
     /**
      * Calendar - Events
      * SEARCH FILTER SAME WITH TASKS
@@ -192,7 +190,6 @@ public class XpathUtil {
     public static final String CALENDAR_WEEK_VIEW_HOUR_LINE = "//div[contains(@class,'calendar-week-view')]//div[.='%s']";
     public static final String CALENDAR_MONTH_VIEW_DAY_FORMAT = "//div[@data-bx-calendar-month-day='%s']";
     public static final String CALENDAR_LIST_VIEW_DAY_ITEMS = "//div[@class='calendar-timeline-stream-day'][contains(.,'%s')]//div[@class='calendar-timeline-stream-content-event']";
-
     /**
      * Chat and Calls
      */
@@ -207,8 +204,6 @@ public class XpathUtil {
     public static final String MESSENGER_MESSAGE_TEXTAREA_ICONS = "//div[@class='bx-messenger-textarea-icons']/div[@title='%s']";
     public static final String MESSENGER_MESSAGE_EMOJI_SELECT = "//span[@class='bx-messenger-smile-gallery-set']/img[@title='%s']";
     public static final String MESSENGER_NOTIFICATION_ALL_LINK = "//span[@class='bx-notifier-item-content']//a[.='%s']";
-
-
     /**
      * Employess
      */
@@ -220,8 +215,4 @@ public class XpathUtil {
     public static final String EMPLOEES_PROFILE_MENU_POPUP = "//div[@id='menu-popup-user-menu-profile']//span[.='%s']";
     public static final String EMPLOYEES_PROFILE_MENU_ITEMS = "//div[@id='profile-menu-filter']/a[.='%s']";
     public static final String EMPLOYEES_USR_PROFILE_BLOCK_LINKS = "//div[contains(@class,'user-profile-block')]//a[contains(.,'%s')]";
-
-
-
-
 }
