@@ -5,6 +5,7 @@ import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class TaskTab extends ActivityStreamPage {
 
     public void setTaskTitle(String title){
@@ -24,14 +25,16 @@ public class TaskTab extends ActivityStreamPage {
     public void assignEmployeeToRole(String role, String employee){
         String isNot = "";
         if (!role.equals("Responsible person")) {
-
+            createRoleOptions(role);
             isNot="not";
         }
         UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_ROLE_FORMAT,role,isNot);
         UiUtil.clickElement(XpathUtil.GEN_DESTINATION_POPUP_FORMAT,employee);
         UiUtil.clickElement(XpathUtil.POPUP_WINDOW_CLOSE);
     }
-    public void create
+    public void createRoleOptions(String role){
+        UiUtil.clickElement(XpathUtil.GEN_TASK_CREATE_ROLE_FORMAT,role);
+    }
 
 
 
@@ -39,22 +42,29 @@ public class TaskTab extends ActivityStreamPage {
         UiUtil.clickElement(XpathUtil.TASK_TAB_ROLE_CANCEL_SELECTION,role);
     }
 
-    public void setDeadLine(String deadline){
-        String[] date = deadline.split("-")[0].split(" ");
-        String[] time = deadline.split("-")[1].split(" ");
-        if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_YEAR).equals(date[0])){
+    public void selectDateAndTime(String deadline){
+        selectDate(deadline.split("-")[0]);
+        selectTime(deadline.split("-")[1]);
+    }
+
+    public void selectDate(String date){
+        if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_YEAR).equals(date.split(" ")[2])){
             UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_HEADER_YEAR);
-            UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_YEAR_CONTENT,date[2]);
             BrowserUtils.wait(1);
+            UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_YEAR_CONTENT,date.split(" ")[2]);
         }
-        if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_MONTH).equals(date[0])){
+        if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_HEADER_MONTH).equals(date.split(" ")[0])){
             UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_HEADER_MONTH);
-            UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_MONTH_CONTENT,date[0]);
+            BrowserUtils.wait(1);
+            UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_MONTH_CONTENT,date.split(" ")[0]);
         }
-        UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_DAY_CONTENT,date[1]);
-        UiUtil.sendTextToElement(XpathUtil.CALENDAR_POPUP_TIME_HR_INPUT,time[0]);
-        UiUtil.sendTextToElement(XpathUtil.CALENDAR_POPUP_TIME_MIN_INPUT,time[1]);
-        if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_AMPM).equals(time[2])){
+        UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_DAY_CONTENT,date.split(" ")[1]);
+    }
+
+    public void selectTime(String time){
+        UiUtil.sendTextToElement(XpathUtil.CALENDAR_POPUP_TIME_HR_INPUT,time.split(" ")[0]);
+        UiUtil.sendTextToElement(XpathUtil.CALENDAR_POPUP_TIME_MIN_INPUT,time.split(" ")[1]);
+        if (!UiUtil.getTextFromElement(XpathUtil.CALENDAR_POPUP_AMPM).equals(time.split(" ")[2])){
             UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_AMPM);
         }
         UiUtil.clickElement(XpathUtil.CALENDAR_POPUP_TIME_SELECT_BTN);
@@ -69,7 +79,7 @@ public class TaskTab extends ActivityStreamPage {
     }
 
     public void clickAdd(String module){
-        UiUtil.clickElement(XpathUtil.GEN_TASK_ADDITIONAL_POPUP_FORMAT,module);
+        UiUtil.clickElement(XpathUtil.GEN_ADDITIONAL_TASKS_ADD_FORMAT,module);
     }
 
     public void selectCheckBox(String name){
@@ -84,7 +94,7 @@ public class TaskTab extends ActivityStreamPage {
     public void addReminder(String date){
         UiUtil.clickElement(XpathUtil.TASK_REMINDER_BOX);
         UiUtil.clickElement(XpathUtil.TASK_REMINDER_CALENDAR_BOX);
-        setDeadLine(date);
+        selectDateAndTime(date);
     }
 
     public void selectAssignee(String assignee){
@@ -101,20 +111,20 @@ public class TaskTab extends ActivityStreamPage {
         UiUtil.clickElement(XpathUtil.TASK_REMIDNER_ADD_BTN);
     }
 
-    public void clickPreviousTaskBtn(String task){
-        UiUtil.clickElement(XpathUtil.TASK_ADD_PREVIOUS_TASK);
-        UiUtil.clickElement(XpathUtil.GEN_PREVIOUS_TASK_LIST_FORMAT,task);
-        UiUtil.clickElement(XpathUtil.TASK_PREVIOUS_TASK_POPUP_BTN_FORMAT,"Select");
+
+    public void selectTaskTypeAndTask(String type, String task){
+        BrowserUtils.scrollTo(UiUtil.get_webElement(XpathUtil.GEN_ADDITIONAL_TASKS_ADD_FORMAT,type));
+        UiUtil.clickElement(XpathUtil.GEN_ADDITIONAL_TASKS_ADD_FORMAT,type);
+        if (type.equals("Subtask of")) type="parent";
+        if (type.equals("Dependent tasks")) type="son";
+        if (type.equals("Gantt")) type="fb";
+        UiUtil.clickElement(XpathUtil.GEN_ADDITIONAL_TASK_POPUP_LIST_FORMAT,task,type);
+        UiUtil.clickElement(XpathUtil.TASK_ADDITIONAL_TASK_POPUP_BTN_FORMAT,type,"Select");
     }
 
-    public void addParentChildTask(String type, String taskNum){
-        UiUtil.clickElement(XpathUtil.GEN_TASK_ADDITIONAL_POPUP_FORMAT,type);
-        String parentSon = "";
-        if (type.equals("Subtask of")) parentSon="parenttask";
-        if (type.equals("Dependent tasks")) parentSon="dependson";
-        UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_LIST_FORMAT,parentSon,taskNum);
-        UiUtil.clickElement(XpathUtil.TASK_PARENT_DEPENDSON_POPUP_BTN_FORMAT,parentSon,"Select");
-
+    public String submitTaskAndConfirm(){
+        UiUtil.clickElement(XpathUtil.TASK_SEND_BTN);
+        return UiUtil.getTextFromElement(XpathUtil.TASK_SENT_CONFIRMATION_POPUP);
     }
 
 

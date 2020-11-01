@@ -5,6 +5,7 @@ import com.CRM24.util.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class TaskTabStepDefinition {
 
@@ -30,13 +31,12 @@ public class TaskTabStepDefinition {
     @Then("user sets deadline to {string}")
     public void userSetsDeadlineTo(String deadline) {
         task.clickDeadlineBox();
-        task.setDeadLine(deadline);
+        task.selectDateAndTime(deadline);
     }
 
     @Then("user clicks more option button")
     public void userClicksMoreOptionButton() {
         task.clickMoreOptions();
-        BrowserUtils.wait(2);
     }
 
     @And("user selects checkbox {string}")
@@ -64,13 +64,16 @@ public class TaskTabStepDefinition {
         task.selectReminderType(type);
     }
 
-    @Then("user adds previous task {string}")
-    public void userAddsPreviousTask(String taskName) {
-        task.clickPreviousTaskBtn(taskName);
+
+    @Then("user submits task and verifies confirmation message {string}")
+    public void userSubmitsTaskAndVerifiesConfirmationMessage(String msg) {
+        Assert.assertEquals(task.submitTaskAndConfirm(),msg);
+
     }
 
-    @Then("user adds {string} with task number {string}")
-    public void userAddsWithTaskNumber(String type, String taskNum) {
-        task.addParentChildTask(type,taskNum);
+    @Then("user selects task type {string} and attaches task {string}")
+    public void userSelectsTaskTypeAndAttachesTask(String type, String task) {
+        this.task.selectTaskTypeAndTask(type,task);
+
     }
 }
