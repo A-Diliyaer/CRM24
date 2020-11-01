@@ -51,7 +51,7 @@ public class XpathUtil {
     public static final String TASK_TAB_TITLE_BLOCK = "//input[@data-bx-id='task-edit-title']";
     public static final String TASK_TAB_TITLE_PRIORITY = "//input[@data-bx-id='task-edit-priority-cb']";
     public static final String TASK_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe'][ancestor::*[contains(@*,'task')]]";
-    public static final String GEN_TASK_TAB_ROLE_FORMAT = "//div[span[.='%s']]//a[contains(.,'Add')][2]";
+    public static final String GEN_TASK_TAB_ROLE_FORMAT = "//div[span[.='%s']]//a[%s(contains(.,'Add more'))]";
     public static final String TASK_TAB_ADDITIONAL_EDIT = "//div[@data-bx-id='task-edit-additional-header']";
     public static final String TASK_TAB_ROLE_CANCEL_SELECTION = "//div[span[.='%s']]//span[@title='Cancel selection']";
     public static final String GEN_TASK_CREATE_ROLE_FORMAT = "//span[@class='task-dashed-link-inner'][.='%s']";

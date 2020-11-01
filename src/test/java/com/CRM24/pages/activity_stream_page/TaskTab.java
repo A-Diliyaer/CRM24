@@ -22,22 +22,18 @@ public class TaskTab extends ActivityStreamPage {
     }
 
     public void assignEmployeeToRole(String role, String employee){
-        String index = "1";
+        String isNot = "";
         if (!role.equals("Responsible person")) {
-            createRoleOptions(role);
-            index="2";
+
+            isNot="not";
         }
-        UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_ROLE_FORMAT,role,index);
+        UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_ROLE_FORMAT,role,isNot);
         UiUtil.clickElement(XpathUtil.GEN_DESTINATION_POPUP_FORMAT,employee);
         UiUtil.clickElement(XpathUtil.POPUP_WINDOW_CLOSE);
-        if (UiUtil.elementDisplayed(XpathUtil.TASK_MULTI_ROLE_POPUP_MSG)) {
-            UiUtil.clickElement(XpathUtil.TASK_MULTI_ROLE_POPUP_CLOSE);
-        }
     }
+    public void create
 
-    public void createRoleOptions(String role){
-        UiUtil.clickElement(XpathUtil.GEN_TASK_CREATE_ROLE_FORMAT,role);
-    }
+
 
     public void cancelRoleSelection(String role){
         UiUtil.clickElement(XpathUtil.TASK_TAB_ROLE_CANCEL_SELECTION,role);
