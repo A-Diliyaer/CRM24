@@ -1,7 +1,6 @@
 package com.CRM24.step_definitions.activity_stream;
 
 import com.CRM24.pages.activity_stream_page.TaskTab;
-import com.CRM24.util.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -75,5 +74,24 @@ public class TaskTabStepDefinition {
     public void userSelectsTaskTypeAndAttachesTask(String type, String task) {
         this.task.selectTaskTypeAndTask(type,task);
 
+    }
+
+    @Then("user selects repeat term {string}")
+    public void userSelectsRepeatTerm(String term) {
+        task.selectRepeatTerm(term);
+    }
+
+    @And("user selects {string} with an interval of {string}")
+    public void userSelectsWithAnIntervalOf(String dayFormat, String month) {
+        task.enterTaskRepeatTextInput(dayFormat.split("-")[1].split(" ")[1],dayFormat.split("-")[0]);
+        task.selectDropdownAndOption("",dayFormat.split("-")[1]);
+        task.enterTaskRepeatTextInput(month.split(" ")[1],month.split(" ")[0]);
+    }
+
+    @Then("user sets {string} to {string}")
+    public void userSetsTo(String type, String dateTime) {
+        task.clickReadOnlyInputBox(type);
+        if (type.equalsIgnoreCase("Task created on:")) task.selectTime(dateTime);
+        else task.selectDate(dateTime);
     }
 }

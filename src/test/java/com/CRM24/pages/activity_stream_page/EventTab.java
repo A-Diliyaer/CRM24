@@ -4,7 +4,11 @@ import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EventTab extends ActivityStreamPage{
 
@@ -74,6 +78,6 @@ public class EventTab extends ActivityStreamPage{
                     XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT, category));
             UiUtil.clickElement(XpathUtil.GEN_EVENT_SELECT_DROPDOWN_FORMAT, category);
             select.selectByVisibleText(option);
-        }
+    }
 
 }

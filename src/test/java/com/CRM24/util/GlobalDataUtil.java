@@ -4,6 +4,15 @@ public class GlobalDataUtil {
 
     private String msgTitle;
     private String questionNum;
+    private String repeatTerm;
+
+    public String getRepeatTerm() {
+        return repeatTerm;
+    }
+
+    public void setRepeatTerm(String repeatTerm) {
+        this.repeatTerm = repeatTerm;
+    }
 
     public String getMsgTitle() {
         return msgTitle;

@@ -29,7 +29,7 @@ public class XpathUtil {
     public static final String MSG_tAB_RECORD_VIDEO_BTN = "//div[contains(@class,'form-wrap')]//span[.='Record Video']";
     public static final String MSG_TAB_UPLOAD_LOCAL_FILE = "//input[@name='bxu_files[]']";
     public static final String MSG_TAB_ATTACHED_FILE = "//span[@title='Click to insert file']";
-    public static final String GEN_TASK_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
+    public static final String GEN_ALL_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
     public static final String MSG_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe']";
     public static final String GEN_DESTINATION_POPUP_FORMAT = "//div[@id='BXSocNetLogDestination']//a[contains(.,'%s')]";
     public static final String GEN_DESTINATION_ITEM = "//span[@id='feed-add-post-destination-item']";
@@ -70,6 +70,17 @@ public class XpathUtil {
     public static final String CALENDAR_POPUP_TIME_SELECT_BTN = "//a[@data-action='submit']";
     public static final String TASK_MULTI_ROLE_POPUP_CLOSE = "//div[contains(@id,'MULTIPLE_RESPONSIBLES')]//span";
     public static final String GEN_TASK_TAB_CHECKBOX_FORMAT = "//input[@type='checkbox'][parent::label[contains(.,'%s')]]";
+    public static final String TASK_REPETATION_AREA = "//div[contains(@id,'replication')]";
+    public static final String GEN_TASK_REPEAT_TERMS_FORMAT = "//span[contains(@class,'js-id-replication-period-type')][.='%s']";
+    public static final String TASK_REPEAT_ACTIVE_TERM = "//div[contains(@class,'task-replication-panel')]/div[not(contains(@class,'nodisplay'))]";
+    public static final String TASK_REPEAT_ACTIVE_TEXT_INPUT = "//input[contains(@class,'%s')][@type='text']";
+    public static final String TASK_REPEAT_ACTIVE_RADIO_INPUT = "//input[@value=%s][@type='radio']";
+    public static final String TASK_REPEAT_ACTIVE_CHECKBOX_INPUT = "//input[parent::label[contains(.,'%s')]][@type='checkbox']";
+    public static final String TASK_REPEAT_ACTIVE_SELECT_FORMAT = "//select[contains(@class,'%s')]"; //" " or "-num"
+    public static final String TASK_REPEAT_READONLY_INPUT_FORMAT = "//div[@class='task-options-field']/div[label[.='%s']]/span[1]";
+    public static final String TASK_REPEAT_REPEAT_UNTIL_RADIO_BUTTON = "//div[contains(@class,'task-options-field-left')]/input[following-sibling::span[label[.='%s']]]";
+    public static final String TASK_REPEAT_REPEAT_UNTIL_END_DATE_INPUT = "//div[contains(@class,'task-options-field-left')]/span[contains(@class,'end-date')]/input[@readonly='readonly']";
+    public static final String TASK_REPEAT_REPEAT_UNTIL_ITERATIONS_INPUT = "//div[contains(@class,'task-options-field-left')]/span[following-sibling::span[label[.='iterations']]]/input";
     public static final String TASK_PLANNED_TIME_FORMAT = "//input[contains(@class,'%s task-options-inp')]";
     public static final String TASK_REMINDER_BOX = "//span[.='Add reminder']";
     public static final String TASK_REMINDER_CALENDAR_BOX = "//span[@data-bx-id='form-date']/input";
@@ -94,6 +105,7 @@ public class XpathUtil {
     public static final String EVENT_CONTENT_BLOCK = "//div[@class='feed-event']//iframe";
     public static final String GEN_EVENT_POST_BTN_FORMAT = "//span[contains(@title,'%s')][ancestor::*[contains(@*,'event')]]";
     public static final String GEN_EVENT_START_END_FORMAT = "//span[contains(@class,'event-from-to')]//input[contains(@name,'%s')]";
+    public static final String GEN_EVENT_CLOCK_POPUP = "//div[@class='bx-clock-div']";
     public static final String EVENT_CLOCK_HOUR_MINUTE_FORMAT = "//div[contains(@id,'event_%s')]//input[@title='%s']";
     public static final String EVENT_CLOCK_SET_TIME_FORMAT = "//div[contains(@id,'event_%s')]//input[@value='Set Time']";
     public static final String EVENT_CLOCK_AMPM_FORMAT = "//div[contains(@id,'event_%s')]//span[@class='bxc-am-pm']";

@@ -30,7 +30,7 @@ public class MessageTab extends ActivityStreamPage {
     }
 
     public void sendMsg(){
-        UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_SEND_BTN);
+        UiUtil.clickElement(XpathUtil.GEN_ALL_TAB_SEND_BTN);
     }
 
     public void clickDestinationBox(){

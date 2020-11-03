@@ -38,6 +38,23 @@ Feature: Task Tab
     Then user selects task type "Dependent tasks" and attaches task "deadline [2352]"
     Then user submits task and verifies confirmation message "Task has been created"
 
+  @RepeatedTask
+  Scenario: create a simple repeated task
+    When user writes task title "Arpat Task" and task content "user story #1 AC1"
+    And  user assigns role "Responsible person" to employee "helpdesk22@cybertekschool.com"
+    And  user clicks more option button
+    And  user selects checkbox "Activate"
+    Then user selects repeat term "day"
+    And  user selects "1-work day" with an interval of "1 month"
+    Then user sets "Task created on:" to "10 30 PM"
+    And  user sets "Make recurring after:" to "November 10 2020"
+
+
+
+
+
+
+
 
 
 

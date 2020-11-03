@@ -5,12 +5,19 @@ import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractPageBase {
 
     protected WebDriver driver = Driver.getDriver();
     protected WebDriverWait wait = new WebDriverWait(driver,5);
+    protected Wait<WebDriver> fluentWait = new FluentWait<>(driver).withTimeout(5, TimeUnit.SECONDS).
+            pollingEvery(100, TimeUnit.MILLISECONDS).ignoring(NoSuchElementException.class);
 
     public AbstractPageBase() {
         PageFactory.initElements(driver, this);

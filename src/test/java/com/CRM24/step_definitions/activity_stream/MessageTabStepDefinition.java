@@ -29,7 +29,6 @@ public class MessageTabStepDefinition {
     @When("user clicks send button")
     public void userClicksSendButton() {
         msgTab.sendMsg();
-        BrowserUtils.wait(3);
     }
 
     @When("user writes {string} in content box")

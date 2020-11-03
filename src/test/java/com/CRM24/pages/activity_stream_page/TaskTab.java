@@ -3,6 +3,7 @@ package com.CRM24.pages.activity_stream_page;
 import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -32,11 +33,10 @@ public class TaskTab extends ActivityStreamPage {
         UiUtil.clickElement(XpathUtil.GEN_DESTINATION_POPUP_FORMAT,employee);
         UiUtil.clickElement(XpathUtil.POPUP_WINDOW_CLOSE);
     }
+
     public void createRoleOptions(String role){
         UiUtil.clickElement(XpathUtil.GEN_TASK_CREATE_ROLE_FORMAT,role);
     }
-
-
 
     public void cancelRoleSelection(String role){
         UiUtil.clickElement(XpathUtil.TASK_TAB_ROLE_CANCEL_SELECTION,role);
@@ -84,6 +84,7 @@ public class TaskTab extends ActivityStreamPage {
 
     public void selectCheckBox(String name){
         UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_CHECKBOX_FORMAT,name);
+        wait.until(ExpectedConditions.visibilityOf(UiUtil.get_webElement(XpathUtil.TASK_REPETATION_AREA)));
     }
 
     public void enterTaskHourAndMinute(String hr, String min){
@@ -111,7 +112,6 @@ public class TaskTab extends ActivityStreamPage {
         UiUtil.clickElement(XpathUtil.TASK_REMIDNER_ADD_BTN);
     }
 
-
     public void selectTaskTypeAndTask(String type, String task){
         BrowserUtils.scrollTo(UiUtil.get_webElement(XpathUtil.GEN_ADDITIONAL_TASKS_ADD_FORMAT,type));
         UiUtil.clickElement(XpathUtil.GEN_ADDITIONAL_TASKS_ADD_FORMAT,type);
@@ -127,9 +127,24 @@ public class TaskTab extends ActivityStreamPage {
         return UiUtil.getTextFromElement(XpathUtil.TASK_SENT_CONFIRMATION_POPUP);
     }
 
+    public void selectRepeatTerm(String term){
+        UiUtil.clickElement(XpathUtil.GEN_TASK_REPEAT_TERMS_FORMAT,term);
+    }
 
+    public void enterTaskRepeatTextInput(String format, String num){
+        UiUtil.sendTextToElement(UiUtil.add(XpathUtil.
+                TASK_REPEAT_ACTIVE_TERM,XpathUtil.TASK_REPEAT_ACTIVE_TEXT_INPUT),format,num
+        );
+    }
 
+    public void selectDropdownAndOption(String selectBox, String option){
+        Select select = new Select(UiUtil.get_webElement(
+                UiUtil.add(XpathUtil.TASK_REPEAT_ACTIVE_TERM,XpathUtil.TASK_REPEAT_ACTIVE_SELECT_FORMAT),selectBox
+        ));
+        select.selectByVisibleText(option);
+    }
 
-
-
+    public void clickReadOnlyInputBox(String type){
+        UiUtil.clickElement(XpathUtil.TASK_REPEAT_READONLY_INPUT_FORMAT,type);
+    }
 }
