@@ -21,6 +21,16 @@ public class MessageTabStepDefinition {
         msgTab.uploadLocalFile(address);
     }
 
+    @When("user clicks on upload from bitrix24")
+    public void userClicksOnUploadFromBitrix24(){
+        msgTab.clickUploadFromBitrix24();
+    }
+
+    @And("user selects file {string} from recent tab")
+    public void userSlectFileFromRecentTab(String file){
+        msgTab.selectFromRecentFile(file);
+    }
+
     @And("{string} should display under attached files")
     public void shouldDisplayUnderAttachedFiles(String file) {
         Assert.assertTrue("file is not found", msgTab.attachedFileDisplayed(file));

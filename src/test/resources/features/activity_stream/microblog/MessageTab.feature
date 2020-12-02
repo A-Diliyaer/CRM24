@@ -12,19 +12,11 @@ Feature: MessageTab
   Scenario: upload single file from local disk, then send as attachement
     When user writes "old files" in content box
     And  user clicks on post button Upload files
-    When user uploads local file "C:/Users/Aji/Desktop/CRM24/old6file.txt"
-    And  "old6file.txt" should display under attached files
+    When user clicks on upload from bitrix24
+    And  user selects file "old11file" from recent tab
+    And  "old11file.txt" should display under attached files
     When user clicks send button
-    Then new feed should display with the "old6file.txt"
-
-  @SingleImgAttached
-  Scenario: upload single photo from local disk, then send as attachment
-    When user writes "upload old screenshot" in content box
-    And  user clicks on post button Upload files
-    When user uploads local file "C:/Users/Aji/Desktop/CRM24/old6img.PNG"
-    And  "old6img.PNG" should display under attached files
-    When user clicks send button
-    Then new feed should display with the "old6img.PNG"
+    Then new feed should display with the "old11file.txt"
 
   @addDestination
   Scenario: add employee from Employees and departments tab then send/verify message
