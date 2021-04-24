@@ -4,7 +4,7 @@ import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 
-public class SideMenu extends AbstractPageBase {
+public class SideMenu extends BasePage {
 
     public void clickMenu(String item){
         UiUtil.clickElement(XpathUtil.GEN_MENU_ITEM_FORMAT,item);

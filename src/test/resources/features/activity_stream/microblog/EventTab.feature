@@ -4,7 +4,7 @@ Feature: add custom events and post
   Background: user navigate to event tab
     Given user is on the login page
     And user logs in as helpdesk
-    And user clicks menu "Activity Stream"
+    And user is on "Activity Stream" module
     And user clicks "Event" tab under Activity Stream
 
   @createEvent

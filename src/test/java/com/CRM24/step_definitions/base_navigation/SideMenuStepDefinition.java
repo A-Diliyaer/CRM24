@@ -10,8 +10,6 @@ public class SideMenuStepDefinition{
 
     SideMenu menu = new SideMenu();
 
-
-
     @When("^user hovers over (.*) and clicks on edit icon$")
     public void userHoversOverItemAndClicksOnEditIcon(String item) {
         menu.hover_item_edit(item);
@@ -28,10 +26,8 @@ public class SideMenuStepDefinition{
         Assert.assertEquals(home,menu.get_homepage());
     }
 
-    @And("user clicks menu {string}")
-    public void userClicksMenu(String item) {
-
+    @And("user is on {string} module")
+    public void userIsOnModule(String item) {
+        menu.clickMenu(item);
     }
-
-
 }

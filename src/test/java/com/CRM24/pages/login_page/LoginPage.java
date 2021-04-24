@@ -1,12 +1,13 @@
 package com.CRM24.pages.login_page;
 
-import com.CRM24.pages.base_navigation_page.AbstractPageBase;
+import com.CRM24.pages.base_navigation_page.BasePage;
 import com.CRM24.util.ConfigurationReader;
+import com.CRM24.util.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends AbstractPageBase {
+public class LoginPage extends BasePage {
 
     @FindBy(name = "USER_LOGIN")
     private WebElement username;
@@ -71,6 +72,6 @@ public class LoginPage extends AbstractPageBase {
     }
 
     public String get_title(){
-        return driver.getTitle();
+        return Driver.getDriver().getTitle();
     }
 }

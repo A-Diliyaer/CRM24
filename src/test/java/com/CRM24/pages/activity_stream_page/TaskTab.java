@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 public class TaskTab extends ActivityStreamPage {
 
     public void setTaskTitle(String title){
+        UiUtil.scrollTo(XpathUtil.TASK_TAB_TITLE_BLOCK);
         UiUtil.sendTextToElement(XpathUtil.TASK_TAB_TITLE_BLOCK,title);
     }
 
@@ -83,8 +84,9 @@ public class TaskTab extends ActivityStreamPage {
     }
 
     public void selectCheckBox(String name){
+        UiUtil.scrollTo(XpathUtil.GEN_TASK_TAB_CHECKBOX_FORMAT,name);
         UiUtil.clickElement(XpathUtil.GEN_TASK_TAB_CHECKBOX_FORMAT,name);
-        wait.until(ExpectedConditions.visibilityOf(UiUtil.get_webElement(XpathUtil.TASK_REPETATION_AREA)));
+//        wait.until(ExpectedConditions.visibilityOf(UiUtil.get_webElement(XpathUtil.TASK_REPETATION_AREA)));
     }
 
     public void enterTaskHourAndMinute(String hr, String min){

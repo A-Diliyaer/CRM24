@@ -5,7 +5,7 @@ Feature: MessageTab
   Background: open login page
     Given user is on the login page
     And user logs in as helpdesk
-    And user clicks menu "Activity Stream"
+    And user is on "Activity Stream" module
     And user clicks "Message" tab under Activity Stream
 
   @SingleFileAttached
@@ -68,17 +68,6 @@ Feature: MessageTab
     And  user clicks send button
     Then user verify attached tag "tag" on new feed
 
-  @recordVideo
-  Scenario: verify record video access is denied
-    When user clicks on post button Record Video
-    And  user allows permission
-    Then user verify error message
-
-  @visualEditor
-  Scenario: write a message with format: Bold, Italic, Strikethrough, Underline
-    When user clicks on post button Visual editor
-    And  user selects text format Bold, Italic, Underline, Strikethrough
-    And  user writes "dilyar" in content box
 
   @addTitle
   Scenario: write a message with a title

@@ -12,15 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-public abstract class AbstractPageBase {
+public abstract class BasePage {
 
-    protected WebDriver driver = Driver.getDriver();
-    protected WebDriverWait wait = new WebDriverWait(driver,5);
-    protected Wait<WebDriver> fluentWait = new FluentWait<>(driver).withTimeout(5, TimeUnit.SECONDS).
-            pollingEvery(100, TimeUnit.MILLISECONDS).ignoring(NoSuchElementException.class);
+//    protected WebDriver driver = Driver.getDriver();
+//    protected WebDriverWait wait = new WebDriverWait(driver,5);
 
-    public AbstractPageBase() {
-        PageFactory.initElements(driver, this);
+    public BasePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     /**

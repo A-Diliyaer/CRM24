@@ -1,22 +1,29 @@
 package com.CRM24.util;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class UiUtil {
 
-    static String parentWindow;
-    static WebDriver driver = Driver.getDriver();
-    static Actions action = new Actions(Driver.getDriver());
-    static WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+    private static String parentWindow;
+    private static WebDriverWait wait;
+    private static WebDriver driver;
+    private static Actions action;
 
+    public static void initUi(){
+        driver = Driver.getDriver();
+        wait = Driver.getWait();
+        action = Driver.getActions();
+    }
 
     public static String get_xpath(String format, String value){
         return String.format(format,value);
@@ -36,6 +43,10 @@ public class UiUtil {
 
     public static WebElement get_webElement(String format, String valueA, String valueB){
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(get_xpath(format,valueA,valueB))));
+    }
+
+    public static List<WebElement> getWebElements(String format,String value){
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(get_xpath(format,value))));
     }
 
     public static void clickElement(String xpath){
@@ -70,14 +81,17 @@ public class UiUtil {
     }
 
     public static void moveToElement(String xpath){
+        action = new Actions(Driver.getDriver());
         action.moveToElement(get_webElement(xpath)).perform();
     }
 
     public static void moveToElement(String format,String value){
+        action = new Actions(Driver.getDriver());
         action.moveToElement(get_webElement(format,value)).perform();
     }
 
     public static void moveToElement(String format,String valueA, String valueB){
+        action = new Actions(Driver.getDriver());
         action.moveToElement(get_webElement(format,valueA,valueB)).perform();
     }
 
@@ -97,7 +111,17 @@ public class UiUtil {
         return wait.until(ExpectedConditions.visibilityOf(get_webElement(format,valueA,valueB))).getText().trim();
     }
 
+    public static List<String> getListOfTextFromElements(String format, String value){
+        List<String> listOfText = new ArrayList<>();
+        List<WebElement> listOfElements = getWebElements(format,value);
+        for (WebElement each: listOfElements){
+            listOfText.add(each.getText());
+        }
+        return listOfText;
+    }
+
     public static void dragAndDropElement(WebElement A, WebElement B){
+        action = new Actions(Driver.getDriver());
         action.dragAndDrop(A,B).perform();
     }
 
@@ -114,14 +138,14 @@ public class UiUtil {
     }
 
     public static void driverSwitchDefault(){
-        driver.switchTo().defaultContent();
+        Driver.getDriver().switchTo().defaultContent();
     }
 
     public static void switchToChildWindow(){
-        Set<String> windows = driver.getWindowHandles();
+        Set<String> windows = Driver.getDriver().getWindowHandles();
         for (String each : windows){
             if (!each.equals(parentWindow)){
-                driver.switchTo().window(each);
+                Driver.getDriver().switchTo().window(each);
             }
         }
     }
@@ -149,6 +173,22 @@ public class UiUtil {
     public static WebElement getStaleElement(String xpath){
         wait.until(ExpectedConditions.stalenessOf(get_webElement(xpath)));
         return get_webElement(xpath);
+    }
+
+    public static void scrollTo(String xpath){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+                                                                        get_webElement(xpath));
+    }
+
+    public static void scrollTo(String xpath,String value){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
+                get_webElement(xpath,value));
+    }
+
+    public static void waitForElementRefresh(String xpath){
+        wait.until(ExpectedConditions.visibilityOf(UiUtil.get_webElement(xpath)));
+        wait.until(ExpectedConditions.invisibilityOf(UiUtil.get_webElement(xpath)));
+
     }
 
 

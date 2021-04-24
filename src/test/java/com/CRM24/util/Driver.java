@@ -5,13 +5,34 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Driver {
 
     private static WebDriver driver;
+    private static WebDriverWait wait;
+    private static Actions action;
 
     private Driver(){
 
+    }
+
+    public static WebDriverWait getWait(){
+        if (wait==null){
+            return new WebDriverWait(driver,10);
+        }else{
+            return wait;
+        }
+    }
+
+    public static Actions getActions(){
+        if (action==null){
+            return new Actions(driver);
+        }else{
+            return action;
+        }
     }
 
     public static WebDriver getDriver(){

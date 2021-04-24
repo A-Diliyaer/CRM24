@@ -28,6 +28,10 @@ public class XpathUtil {
     public static final String GEN_MSG_TAB_POST_BTN_FORMAT = "//div[contains(@class,'form-wrap')]//span[contains(@title,'%s')]";
     public static final String MSG_tAB_RECORD_VIDEO_BTN = "//div[contains(@class,'form-wrap')]//span[.='Record Video']";
     public static final String MSG_TAB_UPLOAD_LOCAL_FILE = "//input[@name='bxu_files[]']";
+    public static final String MSG_TAB_SELECT_FROM_DRIVE = "//div[@class='feed-add-post-form-wrap']//span[.='Select document from Bitrix24']";
+    public static final String MSG_TAB_FILE_RECENT = "//div[@id='DiskFileDialog']//span[.='Recent items']";
+    public static final String MSG_TAB_FILE_ITEM = "//div[@id='DiskFileDialog']//a[.='%s.txt']";
+    public static final String MSG_TAB_FILE_SELECT_BTN = "//div[@id='DiskFileDialog']//span[.='Select document']";
     public static final String MSG_TAB_ATTACHED_FILE = "//span[@title='Click to insert file']";
     public static final String GEN_ALL_TAB_SEND_BTN = "//button[@id='blog-submit-button-save']";
     public static final String MSG_TAB_CONTENT_FRAME = "//iframe[@class='bx-editor-iframe']";
@@ -172,6 +176,11 @@ public class XpathUtil {
     /**
      * Tasks
      */
+    public static final String TASKS_PAGE_TITLE = "//span[@id='pagetitle']";
+    public static final String GEN_TASKS_TABLE_COLUMN_FORMAT = "//div[contains(@class,'main-grid-fade')]//th[contains(.,'%s')]";
+    public static final String TASKS_TABLE_LOADER_CIRCLE = "//div[@class='main-grid-loader-container']//*[contains(@class,'circle')]";
+    public static final String GEN_TASKS_TABLE_DATA_BY_COLUMN = "//table[@class='main-grid-table']//td[%s]";
+    public static final String GEN_TASKS_TABLE_DATA_BY_COLUMN_NAME = "//table[@class='main-grid-table']//td[count(//div[contains(@class,'main-grid-fade')]//th[.='ID']/preceding-sibling::th)+1]";
     public static final String GEN_TASKS_HEADER_LINKS_FORMAT = "//a[@class='main-buttons-item-link'][contains(.,'%s')]";
     public static final String TASKS_MAIN_UI_FILTER_SEARCH = "//input[@class='main-ui-filter-search-filter']";
     public static final String TASK_TABLE_ALL_TASKS_LIST = "//table[@class='main-grid-table']//tbody//td[3]//a";
@@ -184,6 +193,9 @@ public class XpathUtil {
     public static final String TASKS_SEARCH_FILTER_ROLE_SELECT = "//div[@class='popup-select-content']/div[.='%s']";
     public static final String TASKS_SEARCH_FILTER_FIELD_CONTROL ="//div[@class='main-ui-filter-field-add']/span[.='%s']";
     public static final String TASKS_SEARCH_FILTER_FIELD_BTNS = "//div[@class='main-ui-filter-field-button-inner']/*[contains(.,'%s')]";
+    public static final String TASKS_QUICK_TASK_BTN = "//button[@title='Create quick task']";
+    public static final String TASKS_QUICK_TASK_INPUTS = "//form[@id='task-new-item-form']//input[@placeholder='%s']";
+    public static final String TASKS_QUICK_TASKS_CONFIRM = "//form[@id='task-new-item-form']//span[contains(@id,'%s')]";
     /**
      * Calendar - Events
      * SEARCH FILTER SAME WITH TASKS

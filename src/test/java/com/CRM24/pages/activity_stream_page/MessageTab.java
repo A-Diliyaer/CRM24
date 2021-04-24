@@ -25,11 +25,23 @@ public class MessageTab extends ActivityStreamPage {
         UiUtil.sendTextToElement(UiUtil.get_webElement(XpathUtil.MSG_TAB_UPLOAD_LOCAL_FILE),address);
     }
 
+    public void clickUploadFromBitrix24(){
+        UiUtil.clickElement(XpathUtil.MSG_TAB_SELECT_FROM_DRIVE);
+
+    }
+
+    public void selectFromRecentFile(String file){
+        UiUtil.clickElement(XpathUtil.MSG_TAB_FILE_RECENT);
+        UiUtil.clickElement(XpathUtil.MSG_TAB_FILE_ITEM,file);
+        UiUtil.clickElement(XpathUtil.MSG_TAB_FILE_SELECT_BTN);
+    }
+
     public boolean attachedFileDisplayed(String file){
         return UiUtil.elementDisplayed(XpathUtil.MSG_TAB_ATTACHED_FILE,file);
     }
 
     public void sendMsg(){
+        UiUtil.moveToElement(XpathUtil.GEN_ALL_TAB_SEND_BTN);
         UiUtil.clickElement(XpathUtil.GEN_ALL_TAB_SEND_BTN);
     }
 

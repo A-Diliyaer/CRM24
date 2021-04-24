@@ -29,4 +29,6 @@ public class GlobalDataUtil {
     public void setQuestionNum(String questionNum) {
         this.questionNum = questionNum;
     }
+
+
 }

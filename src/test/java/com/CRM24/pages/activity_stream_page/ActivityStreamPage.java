@@ -1,10 +1,10 @@
 package com.CRM24.pages.activity_stream_page;
 
-import com.CRM24.pages.base_navigation_page.AbstractPageBase;
+import com.CRM24.pages.base_navigation_page.BasePage;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 
-public class ActivityStreamPage extends AbstractPageBase {
+public class ActivityStreamPage extends BasePage {
 
     public void clickTab(String tab) {
         UiUtil.clickElement(XpathUtil.GEN_ACTIVITY_STREAM_TAB_FORMAT, tab);

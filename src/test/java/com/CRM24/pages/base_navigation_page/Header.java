@@ -4,7 +4,7 @@ import com.CRM24.util.BrowserUtils;
 import com.CRM24.util.UiUtil;
 import com.CRM24.util.XpathUtil;
 
-public class Header extends AbstractPageBase {
+public class Header extends BasePage {
 
     public void clickClock(String status){
         UiUtil.clickElement(XpathUtil.GEN_CLOCK_STAT_BTN_FORMAT,status);
