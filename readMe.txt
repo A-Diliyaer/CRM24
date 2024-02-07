@@ -1,2 +1,2 @@
 testing git push/pull
-testing git rules
+testing git ruleSets
